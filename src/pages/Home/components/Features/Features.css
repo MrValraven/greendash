@@ -1,0 +1,24 @@
+.features {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.features .title {
+  text-align: center;
+  max-width: var(--app-max-width);
+  color: #0d2818;
+  font-weight: bold;
+}
+
+.features .subtitle {
+  text-align: center;
+  max-width: calc(var(--app-max-width) - 450px);
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+.features .features-container {
+  max-width: var(--app-max-width);
+}

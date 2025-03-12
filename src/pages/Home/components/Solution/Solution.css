@@ -1,0 +1,17 @@
+.solution {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.solution h2 {
+  max-width: 900px;
+  margin-bottom: 30px;
+}
+
+.solutions-container {
+  display: flex;
+  gap: 50px;
+}

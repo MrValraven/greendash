@@ -1,0 +1,32 @@
+.partners-carrousel {
+  max-width: calc(var(--app-max-width) - 300px);
+  overflow: hidden;
+  display: flex;
+  -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.partners-carrousel-slide {
+  width: max-content;
+  display: flex;
+  gap: 5rem;
+  animation-duration: 22s;
+  animation-name: slide;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.partners-carrousel img {
+  display: inline-block;
+  height: 100px;
+  object-fit: contain;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 2.5rem));
+  }
+}

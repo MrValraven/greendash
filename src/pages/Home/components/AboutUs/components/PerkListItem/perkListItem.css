@@ -1,0 +1,25 @@
+.perk-list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.perk-list-item .perk-list-item-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 56px;
+  height: 56px;
+  background-color: white;
+  border-radius: 12px;
+  transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+  border: 1px solid #ededed;
+}
+
+.perk-list-item:hover .perk-list-item-icon-container {
+  background-color: var(--primaryColor);
+}
+
+.perk-list-item:hover .perk-list-item-icon-container svg path {
+  fill: #f7f7f7;
+}

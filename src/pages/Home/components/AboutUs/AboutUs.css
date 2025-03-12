@@ -1,0 +1,31 @@
+.about-us {
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+.about-us .information-container,
+.about-us .perks-container {
+  max-width: calc((var(--app-max-width) - 300px) / 2);
+}
+
+.about-us .information-container h2 {
+  color: var(--secondary-color);
+  color: black;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.5;
+}
+
+.about-us .information-container p {
+  font-weight: 400;
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+.about-us .perks-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}

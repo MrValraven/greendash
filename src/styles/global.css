@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --primaryColor: #399c17;
+  --secondaryColor: #2f2b3de5;
+  --backgroundColor: #d4f4e2;
+  --firstIntermediateBackgroundColor: #dff7eabb;
+  --secondIntermediateBackgroundColor: #e9f9f084;
+  --finalIntermediateBackgroundColor: #ffffff00;
+
+  --h1-font-size: 42px;
+  --h2-font-size: 36px;
+
+  --app-max-width: 1300px;
+
+  --p-font-size: 18px;
+
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  color: var(--secondaryColor);
+  font-family: 'Public Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 50px 0;
+}

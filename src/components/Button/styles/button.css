@@ -1,0 +1,75 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  text-decoration: none; /* Ensures it works for <a> elements */
+  padding: 15px 45px;
+  font-weight: bold;
+  box-shadow: #2dc26d69 0px 10px 25px 0px;
+  font-size: var(--p-font-size);
+  font-weight: 500;
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+/* Variants */
+.button.primary {
+  background-color: var(--primaryColor);
+  color: white;
+}
+
+.button.primary:hover {
+  background-color: #0d2818;
+}
+
+.button.secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.button.secondary:hover {
+  background-color: #545b62;
+}
+
+.button.outline {
+  background-color: transparent;
+  border: 2px solid #007bff;
+  color: #007bff;
+}
+
+.button.outline:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.button.ghost {
+  background: none;
+  color: #007bff;
+}
+
+.button.ghost:hover {
+  background: rgba(0, 123, 255, 0.1);
+}
+
+/* Sizes */
+.button.sm {
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.button.md {
+  padding: 10px 16px;
+  font-size: 16px;
+}
+
+.button.lg {
+  padding: 14px 20px;
+  font-size: 18px;
+}

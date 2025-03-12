@@ -1,0 +1,13 @@
+.partners {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.partners h2 {
+  color: #0d2818;
+  margin-bottom: 36px;
+  font-weight: 700;
+}
