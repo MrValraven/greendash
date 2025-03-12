@@ -44,7 +44,7 @@ const featureCardsInfo: IFeatureCardInfo[] = [
 
 const Features = () => {
   return (
-    <section className='features'>
+    <section id='features' className='features'>
       <h2 className='title'>Main Features</h2>
       <p className='subtitle'>
         GreenDash is the most complete ESG reporting tool powered by Human Expertise and AI support,

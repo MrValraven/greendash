@@ -9,10 +9,11 @@
   transition: background 0.2s, transform 0.1s;
   text-decoration: none; /* Ensures it works for <a> elements */
   padding: 15px 45px;
-  font-weight: bold;
-  box-shadow: #2dc26d69 0px 10px 25px 0px;
   font-size: var(--p-font-size);
-  font-weight: 500;
+}
+
+.button.has-glowy-shadow {
+  box-shadow: #2dc26d69 0px 10px 25px 0px;
 }
 
 .button:active {
@@ -59,12 +60,12 @@
 }
 
 /* Sizes */
-.button.sm {
+.button.small {
   padding: 6px 12px;
   font-size: 14px;
 }
 
-.button.md {
+.button.medium {
   padding: 10px 16px;
   font-size: 16px;
 }

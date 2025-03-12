@@ -1,10 +1,13 @@
 .greendash-logo {
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 700;
   letter-spacing: -2px;
   width: fit-content;
 }
 
 .greendash-logo p {
-  border-bottom: 5px solid var(--primaryColor);
+  display: inline-block;
+  padding: 0;
+  line-height: 1em;
+  border-bottom: 3px solid var(--primaryColor);
 }

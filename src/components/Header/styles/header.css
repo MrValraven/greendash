@@ -1,10 +1,22 @@
+.header-container {
+  background-color: var(--backgroundColor);
+  display: flex;
+  justify-content: center;
+  padding: 16px 40px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 8px 32px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff61;
+  width: 100%;
+  max-width: var(--app-max-width);
+  border-radius: 6px;
+  border: 2px solid #ffffff61;
 }
 
 .logo {
@@ -15,7 +27,18 @@
 nav ul {
   list-style: none;
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 15px;
+}
+
+nav ul li a {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+nav ul li a:hover {
+  color: var(--primaryColor);
 }
 
 nav a {
