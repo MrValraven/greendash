@@ -1,5 +1,64 @@
 .footer {
-  padding: 10px;
-  background-color: #fff;
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  padding: 46px 40px 30px 40px;
+  background-color: #39354c;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  display: flex;
+  justify-content: center;
+}
+.footer .footer-content {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: calc(var(--app-max-width) + 300px);
+}
+
+.footer .footer-info {
+  display: flex;
+  align-items: flex-end;
+  gap: 75px;
+}
+
+.footer .footer-content .socials {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer .footer-content .socials a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer .footer-content .socials a.linkedin img {
+  margin-top: -2px;
+}
+
+.footer .footer-content .socials img {
+  width: 20px;
+}
+
+.footer .footer-content .socials span {
+  color: white;
+  text-decoration: underline;
+}
+
+.footer .footer-content .quick-links .quick-links-container {
+  max-width: 60%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer .footer-content .quick-links h4 {
+  color: #d4f4e2;
+  margin-bottom: 16px;
+}
+
+.footer .footer-content .quick-links a {
+  flex: 1 1 calc(50% - 10px); /* Takes 50% width minus gap */
+  color: #f7f7f7;
 }
