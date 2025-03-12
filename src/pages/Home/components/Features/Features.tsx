@@ -1,4 +1,3 @@
-import React from 'react';
 import { IFeatureCardInfo } from './types';
 import FeaturesInformationCard from './FeaturesInformationCard/FeaturesInformationCard';
 import ComplianceImage from './images/ComplianceImage';
