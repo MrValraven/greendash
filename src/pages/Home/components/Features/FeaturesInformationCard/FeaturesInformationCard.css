@@ -32,9 +32,13 @@
 .features-information-card .information-container h2 {
   font-size: 34px;
   margin-top: 16px;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   color: #0d2818;
   font-weight: bold;
+}
+
+.features-information-card .information-container p {
+  font-weight: 300;
 }
 
 .features-information-card.reversed {

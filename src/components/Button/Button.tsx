@@ -16,7 +16,13 @@ const Button = forwardRef<HTMLElement, ButtonProps & ComponentPropsWithoutRef<an
     { as: Component = 'button', variant = 'primary', size = 'medium', className = '', ...props },
     ref,
   ) => {
-    return <Component ref={ref} className={`button ${variant} ${size} ${className}`} {...props} />;
+    return (
+      <Component
+        ref={ref}
+        className={`button ${variant} ${size} ${className}`}
+        {...props}
+      ></Component>
+    );
   },
 );
 
