@@ -1,5 +1,4 @@
 import Button from '@components/Button/Button';
-import React from 'react';
 
 import './waitingList.css';
 
