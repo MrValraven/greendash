@@ -10,8 +10,9 @@ const Footer = () => {
     <motion.footer
       className='footer'
       initial={{ y: 50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 1, type: 'spring', delay: 0.3 }}
+      viewport={{ once: true }}
     >
       <div className='footer-content'>
         <div className='footer-info'>

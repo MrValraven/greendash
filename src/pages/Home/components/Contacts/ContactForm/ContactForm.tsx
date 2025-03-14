@@ -1,10 +1,18 @@
 import Button from '@components/Button/Button';
 
+import { motion } from 'motion/react';
+
 import './contactForm.css';
 
 const ContactForm = () => {
   return (
-    <div className='contact-form'>
+    <motion.div
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 1, type: 'spring', delay: 0.3 }}
+      viewport={{ once: true }}
+      className='contact-form'
+    >
       <h2>Interested?</h2>
       <h3>Send us a message for more information</h3>
       <form>
@@ -24,7 +32,7 @@ const ContactForm = () => {
         </label>
         <Button size='medium'>Send message</Button>
       </form>
-    </div>
+    </motion.div>
   );
 };
 

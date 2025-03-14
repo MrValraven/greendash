@@ -5,6 +5,8 @@ import SimplificationImage from './images/SimplificationImage';
 import EfficiencyImage from './images/EfficiencyImage';
 import ExpertiseImage from './images/ExpertiseImage';
 
+import { motion } from 'motion/react';
+
 import './Features.css';
 
 const featureCardsInfo: IFeatureCardInfo[] = [
@@ -45,11 +47,25 @@ const featureCardsInfo: IFeatureCardInfo[] = [
 const Features = () => {
   return (
     <section id='features' className='features'>
-      <h2 className='title'>Main Features</h2>
-      <p className='subtitle'>
+      <motion.h2
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1, type: 'spring', delay: 0.3 }}
+        viewport={{ once: true }}
+        className='title'
+      >
+        Main Features
+      </motion.h2>
+      <motion.p
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1, type: 'spring', delay: 0.3 }}
+        viewport={{ once: true }}
+        className='subtitle'
+      >
         GreenDash is the most complete ESG reporting tool powered by Human Expertise and AI support,
         ensuring that you have a smooth and comprehensive reporting process
-      </p>
+      </motion.p>
       <div className='features-container'>
         {featureCardsInfo.map((feature) => (
           <FeaturesInformationCard

@@ -3,10 +3,11 @@
   align-items: center;
   justify-content: center;
   font-weight: 500;
+  font-family: 'Public Sans', sans-serif;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
+  transition: all 0.2s;
   text-decoration: none; /* Ensures it works for <a> elements */
   padding: 15px 45px;
   font-size: var(--p-font-size);

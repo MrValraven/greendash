@@ -1,6 +1,8 @@
 import './FeaturesInformationCard.css';
 import { IFeatureCardInfo } from '../types';
 
+import { motion } from 'motion/react';
+
 const FeaturesInformationCard = ({
   Image,
   title,
@@ -9,7 +11,13 @@ const FeaturesInformationCard = ({
   isLayoutReversed,
 }: IFeatureCardInfo) => {
   return (
-    <div className={`features-information-card ${isLayoutReversed ? 'reversed' : ''}`}>
+    <motion.div
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 1, type: 'spring', delay: 0.3 }}
+      viewport={{ once: true }}
+      className={`features-information-card ${isLayoutReversed ? 'reversed' : ''}`}
+    >
       <div className='feature-card-information-image'>
         <Image />
       </div>
@@ -18,7 +26,7 @@ const FeaturesInformationCard = ({
         <h2>{title}</h2>
         <p>{description}</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
