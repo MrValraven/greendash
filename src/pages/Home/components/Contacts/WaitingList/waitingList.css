@@ -1,0 +1,24 @@
+.waiting-list {
+  width: 50%;
+}
+
+.waiting-list h2 {
+  font-weight: 700;
+  color: var(--secondaryColor);
+}
+
+.waiting-list p {
+  font-size: 16px;
+  margin-top: 8px;
+  margin-bottom: 32px;
+}
+
+.waiting-list form {
+  display: flex;
+  gap: 25px;
+}
+
+.contacts-container .waiting-list form input {
+  width: 60%;
+  height: 50px;
+}

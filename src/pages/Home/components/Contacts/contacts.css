@@ -1,0 +1,29 @@
+.contacts {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    rgb(204, 229, 193) 51.35135135135135%,
+    rgb(255, 255, 255) 100%
+  );
+}
+
+.contacts-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 50px;
+  max-width: calc(var(--app-max-width) - 200px);
+}
+
+.contacts-container form input,
+.contacts-container form textarea {
+  border-radius: 10px;
+  padding: 12px 20px;
+  width: 50%;
+  font-family: 'Public sans', sans-serif;
+  background-color: white;
+  color: black;
+  outline: none;
+  border: 0;
+}

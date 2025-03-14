@@ -4,6 +4,7 @@ import Solution from './components/Solution/Solution';
 import Features from './components/Features/Features';
 import AboutUs from './components/AboutUs/AboutUs';
 import Partners from './components/Partners/Partners';
+import Contacts from './components/Contacts/Contacts';
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <AboutUs />
       <Features />
       <Partners />
+      <Contacts />
     </section>
   );
 };
