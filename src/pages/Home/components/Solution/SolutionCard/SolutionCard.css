@@ -16,3 +16,19 @@
 .solution-card p {
   font-size: 16px;
 }
+
+@media (max-width: 1024px) {
+  .solution-card {
+    justify-content: space-between;
+    width: 500px;
+    height: 250px;
+  }
+}
+
+/* Mobile-first approach */
+@media (max-width: 640px) {
+  .solution-card {
+    width: 100%;
+    height: fit-content;
+  }
+}

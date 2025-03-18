@@ -62,3 +62,31 @@
   flex: 1 1 calc(50% - 10px); /* Takes 50% width minus gap */
   color: #f7f7f7;
 }
+
+@media (max-width: 1024px) {
+  .footer {
+    justify-content: space-between;
+  }
+  .footer .footer-content {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .footer .footer-content .footer-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer .footer-content {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 25px;
+  }
+}

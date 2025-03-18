@@ -23,3 +23,21 @@
 .perk-list-item:hover .perk-list-item-icon-container svg path {
   fill: #f7f7f7;
 }
+
+@media (max-width: 1024px) {
+  .perk-list-item {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid var(--primaryColor);
+    padding: 15px 25px;
+    border-radius: 12px;
+  }
+
+  .perk-list-item .perk-list-item-icon-container {
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid var(--primaryColor);
+  }
+}

@@ -56,10 +56,29 @@ body::-webkit-scrollbar-thumb {
 }
 
 section {
-  padding: 50px 0;
+  padding: 75px 40px;
 }
 
 a {
   text-decoration: none;
   color: black;
+}
+
+/* Mobile-first approach */
+@media (max-width: 640px) {
+  section {
+    padding: 75px 15px;
+  }
+}
+@media (min-width: 768px) {
+  /* md */
+}
+@media (min-width: 1024px) {
+  /* lg */
+}
+@media (min-width: 1280px) {
+  /* xl */
+}
+@media (min-width: 1536px) {
+  /* 2xl */
 }

@@ -21,8 +21,8 @@ const WaitingList = () => {
         transition={{ duration: 1, type: 'spring', delay: 0.2 }}
         viewport={{ once: true }}
       >
-        Be the first have access to our groundbreaking sustainability report builder and be notified
-        when we launch!
+        Be the first to have access to our groundbreaking sustainability report builder and be
+        notified when we launch!
       </motion.p>
       <motion.form
         initial={{ y: 50, opacity: 0 }}

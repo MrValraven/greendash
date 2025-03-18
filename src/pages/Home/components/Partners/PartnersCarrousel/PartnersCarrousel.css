@@ -30,3 +30,15 @@
     transform: translateX(calc(-50% - 2.5rem));
   }
 }
+
+@media (max-width: 1024px) {
+  .partners-carrousel {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .feature-card-information-image {
+    width: 100%;
+  }
+}

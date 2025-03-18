@@ -41,3 +41,26 @@
 .features-information-card.reversed {
   flex-direction: row-reverse;
 }
+
+@media (max-width: 1024px) {
+  .features-information-card,
+  .features-information-card.reversed {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .features-information-card .information-container {
+    width: 100%;
+    margin: 10px 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .feature-card-information-image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}

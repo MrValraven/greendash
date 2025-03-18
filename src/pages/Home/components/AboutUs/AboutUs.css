@@ -28,3 +28,25 @@
   flex-direction: column;
   gap: 24px;
 }
+
+@media (max-width: 1024px) {
+  .about-us {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+  }
+
+  .about-us .information-container,
+  .about-us .perks-container {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-us .information-container,
+  .about-us .perks-container {
+    max-width: 100%;
+  }
+}

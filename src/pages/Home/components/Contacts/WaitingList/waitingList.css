@@ -1,5 +1,6 @@
 .waiting-list {
   width: 50%;
+  text-align: center;
 }
 
 .waiting-list h2 {
@@ -21,4 +22,29 @@
 .contacts-container .waiting-list form input {
   width: 60%;
   height: 50px;
+}
+
+@media (max-width: 1024px) {
+  .waiting-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .waiting-list form {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .contacts-container .waiting-list form input {
+    width: 100%;
+    height: 50px;
+  }
+}
+
+@media (max-width: 640px) {
+  .waiting-list form {
+    flex-direction: column;
+  }
 }
