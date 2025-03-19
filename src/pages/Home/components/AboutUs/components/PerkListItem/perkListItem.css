@@ -4,6 +4,10 @@
   gap: 12px;
 }
 
+.perk-list-item p {
+  font-weight: 400;
+}
+
 .perk-list-item .perk-list-item-icon-container {
   display: flex;
   justify-content: center;

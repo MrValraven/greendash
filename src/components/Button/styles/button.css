@@ -5,7 +5,7 @@
   font-weight: 500;
   font-family: 'Public Sans', sans-serif;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s;
   text-decoration: none; /* Ensures it works for <a> elements */
