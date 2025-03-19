@@ -64,21 +64,34 @@ a {
   color: black;
 }
 
-/* Mobile-first approach */
-@media (max-width: 640px) {
-  section {
-    padding: 75px 15px;
+@media (max-width: 1024px) {
+  :root {
+    --h1-font-size: 36px;
+    --h2-font-size: 30px;
+    --p-font-size: 16px;
   }
 }
-@media (min-width: 768px) {
-  /* md */
+
+@media (max-width: 768px) {
+  :root {
+    --h1-font-size: 30px;
+    --h2-font-size: 26px;
+    --p-font-size: 15px;
+  }
+
+  section {
+    padding: 40px;
+  }
 }
-@media (min-width: 1024px) {
-  /* lg */
-}
-@media (min-width: 1280px) {
-  /* xl */
-}
-@media (min-width: 1536px) {
-  /* 2xl */
+
+@media (max-width: 640px) {
+  :root {
+    --h1-font-size: 26px;
+    --h2-font-size: 22px;
+    --p-font-size: 14px;
+  }
+
+  section {
+    padding: 40px 15px;
+  }
 }

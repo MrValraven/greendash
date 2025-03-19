@@ -2,8 +2,10 @@ import GreendashLogo from '@components/GreendashLogo/GreendashLogo';
 import './styles/header.css';
 import { motion } from 'framer-motion';
 import Button from '@components/Button/Button';
+import { useState } from 'react';
 
 const Header = () => {
+  const [text, setText] = useState('Courses & Certifications');
   return (
     <div className='header-container'>
       <motion.header
@@ -23,8 +25,12 @@ const Header = () => {
             <li>
               <a href='#features'>Features</a>
             </li>
-            <li>
-              <a href=''>Courses & Certification</a>
+            <li
+              onMouseEnter={() => setText('Coming soon!')}
+              onMouseLeave={() => setText('Courses & Certification')}
+              id='courses-nav-link'
+            >
+              <a href=''>{text}</a>
             </li>
             <li>
               <Button hasGlowyShadow={false} size='medium'>

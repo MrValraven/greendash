@@ -22,3 +22,11 @@
 .features .features-container {
   max-width: var(--app-max-width);
 }
+
+@media (max-width: 420px) {
+  .features-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+}

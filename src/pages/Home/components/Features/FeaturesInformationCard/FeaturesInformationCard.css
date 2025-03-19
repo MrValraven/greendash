@@ -27,7 +27,7 @@
 }
 
 .features-information-card .information-container h2 {
-  font-size: 34px;
+  font-size: var(--h2-font-size);
   margin-top: 16px;
   margin-bottom: 16px;
   color: #0d2818;
@@ -36,6 +36,7 @@
 
 .features-information-card .information-container p {
   font-weight: 300;
+  font-size: var(--p-font-size);
 }
 
 .features-information-card.reversed {
@@ -62,5 +63,25 @@
     display: flex;
     justify-content: center;
     width: 100%;
+  }
+
+  .feature-card-information-image svg {
+    width: 100%;
+  }
+
+  .features-information-card .information-container h2 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  .features-information-card .information-container h3 {
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .feature-card-information-image {
+    display: none;
   }
 }

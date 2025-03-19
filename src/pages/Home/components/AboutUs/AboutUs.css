@@ -14,7 +14,7 @@
   color: var(--secondary-color);
   color: black;
   font-weight: 700;
-  font-size: 34px;
+  font-size: var(--h2-font-size);
 }
 
 .about-us .information-container p {
