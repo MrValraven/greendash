@@ -19,7 +19,7 @@
   gap: 25px;
 }
 
-.contacts-container .waiting-list form input {
+.contacts-container .waiting-list form label {
   width: 60%;
   height: 50px;
 }

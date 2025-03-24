@@ -10,7 +10,7 @@ const MagicWandIcon: ComponentType<SVGProps<SVGSVGElement>> = (props: SVGProps<S
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
     >
-      <g clip-path='url(#clip0_526_4540)'>
+      <g clipPath='url(#clip0_526_4540)'>
         <path
           d='M19.4998 12.8895L18.0098 14.3795L15.0098 11.3795L16.4998 9.88953C16.9198 9.46953 17.4598 9.26953 17.9998 9.26953C18.5398 9.26953 19.0798 9.46953 19.4998 9.88953C20.3298 10.7195 20.3298 12.0595 19.4998 12.8895Z'
           fill='#0D2818'
