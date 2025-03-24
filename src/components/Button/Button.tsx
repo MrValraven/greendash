@@ -10,6 +10,7 @@ interface ButtonProps<T extends ElementType = 'button'> {
   size?: ButtonSizes;
   className?: string;
   hasGlowyShadow?: boolean;
+  goToElementId?: string;
 }
 
 const Button = forwardRef<HTMLElement, ButtonProps & ComponentPropsWithoutRef<any>>(
@@ -20,12 +21,23 @@ const Button = forwardRef<HTMLElement, ButtonProps & ComponentPropsWithoutRef<an
       size = 'none',
       className = '',
       hasGlowyShadow = true,
+      goToElementId,
       ...props
     },
     ref,
   ) => {
+    const scrollToElement = (elementId: string) => {
+      if (!elementId) return;
+
+      const element = document.getElementById(elementId);
+
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
     return (
       <Component
+        onClick={() => scrollToElement(goToElementId)}
         ref={ref}
         className={`button ${variant} ${size} ${className} ${
           hasGlowyShadow ? 'has-glowy-shadow' : ''

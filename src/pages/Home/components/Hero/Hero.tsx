@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: ANIMATION_DURATION_TIME_IN_SECONDS, type: 'spring', delay: 0.2 }}
         >
-          <Button>Get Started</Button>
+          <Button goToElementId='waiting-list'>Get Started</Button>
         </motion.div>
       </div>
       <div className='hero-explanation'>

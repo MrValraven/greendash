@@ -33,7 +33,7 @@ const Header = () => {
               <a href=''>{text}</a>
             </li>
             <li>
-              <Button hasGlowyShadow={false} size='medium'>
+              <Button goToElementId='waiting-list' hasGlowyShadow={false} size='medium'>
                 Contact Us
               </Button>
             </li>

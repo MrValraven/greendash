@@ -57,7 +57,7 @@ const AboutUs = () => {
           transition={{ duration: 1, type: 'spring', delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <Button>Contact Us To Know More</Button>
+          <Button goToElementId='waiting-list'>Contact Us To Know More</Button>
         </motion.div>
       </div>
       <div className='perks-container'>

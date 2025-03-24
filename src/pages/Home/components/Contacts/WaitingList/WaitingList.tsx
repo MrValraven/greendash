@@ -40,7 +40,7 @@ const WaitingList = () => {
   };
 
   return (
-    <div className='waiting-list'>
+    <div id='waiting-list' className='waiting-list'>
       <motion.h2
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
