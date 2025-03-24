@@ -20,14 +20,14 @@ const solutionProcess: ISolutionCard[] = [
     title: 'Know what and how to disclosure',
     description:
       'Easily identify and collect the data that you need to build your CSRD report from several sources, in one single place',
-    animationDelay: 1,
+    animationDelay: 0.5,
   },
   {
     Icon: ClipboardCheckIcon,
     title: 'Build your Sustainability Report',
     description:
       'We help you build your  report block by block with AI support, supporting you on writing the report and and getting it ready for your stakeholders',
-    animationDelay: 2,
+    animationDelay: 1,
   },
 ];
 

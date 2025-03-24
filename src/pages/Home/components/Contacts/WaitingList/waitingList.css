@@ -16,11 +16,18 @@
 
 .waiting-list form {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 25px;
 }
 
 .contacts-container .waiting-list form label {
   width: 60%;
+  height: 50px;
+}
+
+.contacts-container .waiting-list form label input {
+  width: 100%;
   height: 50px;
 }
 
@@ -37,7 +44,7 @@
     max-width: 600px;
   }
 
-  .contacts-container .waiting-list form input {
+  .contacts-container .waiting-list form label {
     width: 100%;
     height: 50px;
   }

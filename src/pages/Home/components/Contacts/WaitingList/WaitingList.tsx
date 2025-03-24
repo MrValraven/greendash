@@ -66,7 +66,7 @@ const WaitingList = () => {
         viewport={{ once: true }}
         className='waiting-list-form'
       >
-        <label htmlFor=''>
+        <label htmlFor='email'>
           <input
             {...register('email')}
             id='waiting-list-input'
