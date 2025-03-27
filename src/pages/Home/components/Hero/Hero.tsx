@@ -8,7 +8,7 @@ const ANIMATION_DURATION_TIME_IN_SECONDS = 1;
 
 const Hero: React.FC = () => {
   return (
-    <section className='hero'>
+    <section id='hero' className='hero'>
       <div className='hero-text'>
         <motion.h1
           initial={{ y: 50, opacity: 0 }}

@@ -13,7 +13,13 @@
 
 .solutions-container {
   display: flex;
-  gap: 50px;
+  align-items: center;
+  gap: 15px;
+}
+
+.solutions-container .solution-triangle-icon {
+  width: 20px;
+  transform: rotate(90deg);
 }
 
 @media (max-width: 1024px) {
@@ -22,5 +28,10 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+  }
+
+  .solutions-container .solution-triangle-icon {
+    width: 20px;
+    transform: rotate(180deg);
   }
 }

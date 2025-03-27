@@ -4,8 +4,10 @@ import StarClickIcon from './icons/StarClickIcon';
 import ClipboardCheckIcon from './icons/ClipboardCheckIcon';
 import { ISolutionCard } from './types';
 import { motion } from 'motion/react';
+import React from 'react';
 
 import './Solution.css';
+import TriangleIcon from './icons/TriangleIcon';
 
 const solutionProcess: ISolutionCard[] = [
   {
@@ -43,14 +45,28 @@ const Solution = () => {
         We guide you through the whole reporting process, offering you an End-to-End solution
       </motion.h2>
       <div className='solutions-container'>
-        {solutionProcess.map((solution) => (
-          <SolutionCard
-            key={solution.title}
-            Icon={solution.Icon}
-            title={solution.title}
-            description={solution.description}
-            animationDelay={solution.animationDelay}
-          />
+        {solutionProcess.map((solution, index) => (
+          <React.Fragment key={solution.title}>
+            <SolutionCard
+              key={solution.title}
+              Icon={solution.Icon}
+              title={solution.title}
+              description={solution.description}
+              animationDelay={solution.animationDelay}
+            />
+            {index < solutionProcess.length - 1 ? (
+              <motion.div
+                initial={{ x: -20, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1, type: 'spring', delay: solution.animationDelay! + 0.2 }}
+                viewport={{ once: true }}
+                key={solution.title + index}
+                className='solution-triangle-icon-container'
+              >
+                <TriangleIcon />
+              </motion.div>
+            ) : null}
+          </React.Fragment>
         ))}
       </div>
     </section>
