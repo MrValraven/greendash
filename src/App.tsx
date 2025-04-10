@@ -3,6 +3,7 @@ import Home from '@pages/Home/Home.tsx';
 import Header from '@components/Header/Header.tsx';
 import Footer from '@components/Footer/Footer.tsx';
 import './styles/global.css';
+import NotFound from '@pages/NotFound/NotFound';
 
 const App: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const App: React.FC = () => {
       <main>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </main>
       <Footer />

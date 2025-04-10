@@ -1,0 +1,26 @@
+[
+  {
+    "icon": "Droplet",
+    "category": "water",
+    "title": "Water conservation",
+    "textContent": "Install low-flow fixtures in your workplace to reduce water consumption by up to 30%."
+  },
+  {
+    "icon": "Lightning",
+    "category": "energy",
+    "title": "Energy efficiency",
+    "textContent": "Switch to LED lighting to reduce energy consumption by up to 75% compared to incandescent bulbs."
+  },
+  {
+    "icon": "Recycle",
+    "category": "waste",
+    "title": "Zero Waste",
+    "textContent": "Implement a composting program to divert up to 40% of your waste stream from landfills."
+  },
+  {
+    "icon": "People",
+    "category": "social",
+    "title": "Inclusive Practices",
+    "textContent": "Create a supplier diversity program to support local and minority-owned businesses in your supply chain."
+  }
+]
