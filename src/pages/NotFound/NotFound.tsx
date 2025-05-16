@@ -1,5 +1,5 @@
 import React from 'react';
-import { Component } from './components/NotFoundPage/NotFound';
+/* import { Component } from './components/NotFoundPage/NotFound';
 
 type Props = {};
 
@@ -11,21 +11,23 @@ const NotFoundErrorPage = (props: Props) => {
   );
 };
 
-export default NotFoundErrorPage;
+export default NotFoundErrorPage; */
 
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import { Lightbulb, Home, HelpCircle } from 'lucide-react';
+import NotFoundErrorMessage from './components/NotFoundErrorMessage/NotFoundErrorMessage';
+import NotFoundErrorActions from './components/NotFoundErrorActions/NotFoundErrorActions';
+import NotFoundFeatureSection from './components/NotFoundFeatureSection/NotFoundFeatureSection';
+import NotFoundTipsCarousel from './components/NotFoundTipsCarousel/NotFoundTipsCarousel';
 
 const ErrorPage = () => {
   return (
     <div className='flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6'>
       <ErrorIcon />
-      <ErrorMessage />
-      <ErrorActions />
-      <FeatureSection />
-      <TipsCarousel />
+      <NotFoundErrorMessage />
+      <NotFoundErrorActions />
+      <NotFoundFeatureSection />
+      <NotFoundTipsCarousel />
     </div>
   );
 };

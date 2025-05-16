@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './style.css';
+import './EsgChatboxDisplay.css';
 
-export const Component = () => {
+export const EsgChatbotDisplayTailwind = () => {
   return (
     <div id='webcrumbs'>
       <div className='w-[1200px] bg-gradient-to-b from-primary-50 to-white'>
@@ -50,7 +50,7 @@ export const Component = () => {
                 strokeLinejoin='round'
               />
             </svg>
-            <h1 className='text-2xl font-bold text-primary-700'>EcoInsight</h1>
+            <h1 className='text-2xl font-bold text-primary-700'>Greendash</h1>
             {/* Next: "Add a complete navigation menu with dropdown for services and resources" */}
           </div>
           <nav className='hidden md:flex items-center gap-8'>
@@ -266,7 +266,7 @@ export const Component = () => {
                     </div>
                     <p className='text-gray-600 italic'>
                       "As a medium-sized enterprise, navigating EU ESG regulations seemed impossible
-                      until we found EcoInsight. The AI assistant guided us through every step."
+                      until we found Greendash. The AI assistant guided us through every step."
                     </p>
                     <div className='pt-4 mt-auto border-t'>
                       <div className='flex items-center gap-3'>
@@ -292,7 +292,7 @@ export const Component = () => {
                       ))}
                     </div>
                     <p className='text-gray-600 italic'>
-                      "The data insights provided by EcoInsight helped us identify efficiency
+                      "The data insights provided by Greendash helped us identify efficiency
                       opportunities we never would have found. We've reduced emissions by 23% in
                       just one year!"
                     </p>

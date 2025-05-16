@@ -1,8 +1,10 @@
 import React from 'react';
 
 import './Dashboard.css';
+import DashboardSidebar from '@components/DashboardSidebar/DashboardSidebar';
+import DashboardMetrics from '@components/DashboardMetrics/DashboardMetrics';
 
-export const Dashboard = () => {
+export const DashboardTailwind = () => {
   return (
     <div id='webcrumbs'>
       <div className='w-[1200px] bg-white rounded-xl shadow-lg'>
@@ -24,7 +26,7 @@ export const Dashboard = () => {
                 />
               </svg>
             </div>
-            <h1 className='text-2xl font-bold text-gray-800'>EcoTrack Dashboard</h1>
+            <h1 className='text-2xl font-bold text-gray-800'>Greendash</h1>
           </div>
           <div className='flex items-center space-x-4'>
             <div className='relative'>
@@ -116,80 +118,16 @@ export const Dashboard = () => {
             </details>
           </div>
         </header>
-
         <div className='grid grid-cols-4 gap-6 p-6'>
-          <div className='col-span-1'>
-            <nav className='space-y-2'>
-              <a
-                href='https://webcrumbs.cloud/placeholder'
-                className='flex items-center space-x-3 p-3 bg-primary-50 text-primary-700 rounded-lg font-medium border-l-4 border-primary-600 hover:bg-primary-100 transition-all duration-200'
-              >
-                <span className='material-symbols-outlined'>dashboard</span>
-                <span>Dashboard</span>
-              </a>
-              <a
-                href='https://webcrumbs.cloud/placeholder'
-                className='flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200'
-              >
-                <span className='material-symbols-outlined'>description</span>
-                <span>Reports</span>
-              </a>
-              <a
-                href='https://webcrumbs.cloud/placeholder'
-                className='flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200'
-              >
-                <span className='material-symbols-outlined'>folder_open</span>
-                <span>Projects</span>
-              </a>
-              <a
-                href='https://webcrumbs.cloud/placeholder'
-                className='flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200'
-              >
-                <span className='material-symbols-outlined'>analytics</span>
-                <span>Carbon Metrics</span>
-              </a>
-              <a
-                href='https://webcrumbs.cloud/placeholder'
-                className='flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200'
-              >
-                <span className='material-symbols-outlined'>eco</span>
-                <span>Sustainability Goals</span>
-              </a>
-              <a
-                href='https://webcrumbs.cloud/placeholder'
-                className='flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200'
-              >
-                <span className='material-symbols-outlined'>groups</span>
-                <span>Team</span>
-              </a>
-              <a
-                href='https://webcrumbs.cloud/placeholder'
-                className='flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200'
-              >
-                <span className='material-symbols-outlined'>settings</span>
-                <span>Settings</span>
-              </a>
-              {/* Next: "Add support FAQ section" */}
-            </nav>
+          {/* sidebar esquerda */}
+          <DashboardSidebar />
 
-            <div className='mt-8 p-4 bg-green-50 rounded-lg border border-green-100'>
-              <div className='flex items-center space-x-2 mb-2'>
-                <span className='material-symbols-outlined text-green-600'>tips_and_updates</span>
-                <h3 className='font-medium text-green-800'>Sustainability Tip</h3>
-              </div>
-              <p className='text-sm text-green-700'>
-                Reducing your carbon footprint by 20% this quarter could qualify your organization
-                for green certification!
-              </p>
-              <button className='mt-3 text-sm text-green-600 font-medium hover:text-green-700 transition-colors'>
-                Learn more →
-              </button>
-            </div>
-          </div>
-
+          {/* dashboard content */}
           <div className='col-span-3 space-y-6'>
+            {/* dashboard content header */}
             <div className='flex justify-between items-center'>
               <h2 className='text-xl font-bold text-gray-800'>Sustainability Dashboard</h2>
+              {/* dashboard content header select days and new project button */}
               <div className='flex space-x-3'>
                 <select className='border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200'>
                   <option>Last 7 days</option>
@@ -204,59 +142,8 @@ export const Dashboard = () => {
               </div>
             </div>
 
-            <div className='grid grid-cols-3 gap-4'>
-              <div className='bg-white p-4 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200'>
-                <div className='flex justify-between items-start'>
-                  <div>
-                    <p className='text-gray-500 text-sm'>Carbon Offset</p>
-                    <h3 className='text-2xl font-bold mt-1'>
-                      745 <span className='text-sm font-normal'>tons</span>
-                    </h3>
-                    <p className='text-green-600 text-sm flex items-center mt-1'>
-                      <span className='material-symbols-outlined text-sm mr-1'>trending_up</span>
-                      12.5% from last month
-                    </p>
-                  </div>
-                  <div className='bg-green-100 p-2 rounded-lg'>
-                    <span className='material-symbols-outlined text-green-600'>eco</span>
-                  </div>
-                </div>
-              </div>
-              <div className='bg-white p-4 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200'>
-                <div className='flex justify-between items-start'>
-                  <div>
-                    <p className='text-gray-500 text-sm'>Energy Saved</p>
-                    <h3 className='text-2xl font-bold mt-1'>
-                      128 <span className='text-sm font-normal'>MWh</span>
-                    </h3>
-                    <p className='text-green-600 text-sm flex items-center mt-1'>
-                      <span className='material-symbols-outlined text-sm mr-1'>trending_up</span>
-                      8.3% from last month
-                    </p>
-                  </div>
-                  <div className='bg-blue-100 p-2 rounded-lg'>
-                    <span className='material-symbols-outlined text-blue-600'>bolt</span>
-                  </div>
-                </div>
-              </div>
-              <div className='bg-white p-4 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200'>
-                <div className='flex justify-between items-start'>
-                  <div>
-                    <p className='text-gray-500 text-sm'>Waste Recycled</p>
-                    <h3 className='text-2xl font-bold mt-1'>
-                      4.2 <span className='text-sm font-normal'>tons</span>
-                    </h3>
-                    <p className='text-red-600 text-sm flex items-center mt-1'>
-                      <span className='material-symbols-outlined text-sm mr-1'>trending_down</span>
-                      3.1% from last month
-                    </p>
-                  </div>
-                  <div className='bg-amber-100 p-2 rounded-lg'>
-                    <span className='material-symbols-outlined text-amber-600'>recycling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* dashboard top cards */}
+            <DashboardMetrics />
 
             <div className='bg-white p-6 rounded-lg border border-gray-200 shadow-sm'>
               <h3 className='text-lg font-semibold mb-4'>New Sustainability Project</h3>

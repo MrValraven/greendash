@@ -1,8 +1,8 @@
 import React from 'react';
 import Chart from 'react-apexcharts';
-import './style.css';
+import './UserProjectAnalytics.css';
 
-export const Component = () => {
+export const UserProjectAnalyticsTailwind = () => {
   return (
     <div id='webcrumbs'>
       <div className='w-[1200px] bg-white rounded-lg shadow-lg p-6 font-sans'>

@@ -1,0 +1,35 @@
+[
+  {
+    "label": "Carbon Offset",
+    "value": "745",
+    "unit": "tons",
+    "change": "12.5% from last month",
+    "changeType": "up",
+    "changeColor": "text-green-600",
+    "icon": "eco",
+    "iconBg": "bg-green-100",
+    "iconColor": "text-green-600"
+  },
+  {
+    "label": "Energy Saved",
+    "value": "128",
+    "unit": "MWh",
+    "change": "8.3% from last month",
+    "changeType": "up",
+    "changeColor": "text-green-600",
+    "icon": "bolt",
+    "iconBg": "bg-blue-100",
+    "iconColor": "text-blue-600"
+  },
+  {
+    "label": "Waste Recycled",
+    "value": "4.2",
+    "unit": "tons",
+    "change": "3.1% from last month",
+    "changeType": "down",
+    "changeColor": "text-red-600",
+    "icon": "recycling",
+    "iconBg": "bg-amber-100",
+    "iconColor": "text-amber-600"
+  }
+]

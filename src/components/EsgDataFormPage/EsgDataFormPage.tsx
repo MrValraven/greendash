@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './style.css';
+import './EsgDataFormPage.css';
 
-export const Component = () => {
+export const EsgDataFormPageTailwind = () => {
   return (
     <div data-id='YHXf' className='w-[1000px] bg-white rounded-lg shadow-lg p-8 font-sans'>
       <div data-id='0tMw' className='mb-8'>

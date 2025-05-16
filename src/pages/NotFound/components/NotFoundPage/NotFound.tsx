@@ -2,7 +2,7 @@ import React from 'react';
 
 import './NotFound.css';
 
-export const Component = () => {
+export const NotFoundTailwind = () => {
   return (
     <div id='webcrumbs'>
       <div className='w-[1200px] bg-gradient-to-b from-primary-50 to-white min-h-screen flex flex-col items-center justify-center py-16'>
@@ -224,8 +224,8 @@ export const Component = () => {
 
         <div className='mt-12 text-center'>
           <p className='text-sm text-gray-500 max-w-lg mx-auto'>
-            Our sustainability platform helps companies meet global ESG standards including GRI,
-            SASB, TCFD, and CDP. Let's make sustainability reporting simple together.
+            Our sustainability platform helps companies meet global ESG standards. <br />
+            Let's make sustainability reporting simple together.
           </p>
           <div className='flex justify-center gap-4 mt-4'>
             <a

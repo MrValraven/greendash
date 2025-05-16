@@ -23,6 +23,30 @@ const Header = () => {
               <a href='/'>Home</a>
             </li>
             <li>
+              <a href='/user/storage'>Storage</a>
+            </li>
+            <li>
+              <a href='/user/analytics'>Analytics</a>
+            </li>
+            <li>
+              <a href='/user/profile'>Profile</a>
+            </li>
+            <li>
+              <a href='/user/dashboard'>Dashboard</a>
+            </li>
+            <li>
+              <a href='/esg/chatbot'>Chatbot</a>
+            </li>
+            <li>
+              <a href='/esg/data'>Data</a>
+            </li>
+            <li>
+              <a href='/esg/hub'>Hub</a>
+            </li>
+            <li>
+              <a href='/notfound'>404</a>
+            </li>
+            <li>
               <a href='#features'>Features</a>
             </li>
             <li

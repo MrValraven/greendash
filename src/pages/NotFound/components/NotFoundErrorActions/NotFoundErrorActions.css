@@ -1,0 +1,11 @@
+.not-found-error-actions {
+  display: flex;
+  gap: 1rem; /* gap-4 */
+  margin-top: 1.5rem; /* mt-6 */
+}
+
+.not-found-error-actions__button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* gap-2 */
+}

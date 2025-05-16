@@ -1,13 +1,14 @@
 import React from 'react';
 import tips from './tips.json';
+import './NotFoundTipsCarousel.css';
 
 type Props = {};
 
 const NotFoundTipsCarousel = (props: Props) => {
   return (
-    <div className='mt-10 flex gap-4 overflow-x-auto p-2'>
+    <div className='tips-carousel'>
       {tips.map((tip, index) => (
-        <TipCard key={index} tip={tip} />
+        <TipCard key={index} tip={tip.textContent} />
       ))}
     </div>
   );
@@ -16,9 +17,9 @@ const NotFoundTipsCarousel = (props: Props) => {
 export default NotFoundTipsCarousel;
 
 const TipCard = ({ tip }: { tip: string }) => (
-  <div className='p-4 text-center w-48'>
-    <div>
-      <p className='text-gray-700'>{tip}</p>
+  <div className='tip-card'>
+    <div className='tip-card__content'>
+      <p className='tip-card__text'>{tip}</p>
     </div>
   </div>
 );

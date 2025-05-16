@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './style.css';
+import './UserUploadedStorage.css';
 
-export const Component = () => {
+export const UserUploadedStorageTailwind = () => {
   return (
     <div id='webcrumbs'>
       <div className='w-[1200px] bg-gradient-to-b from-primary-50 to-white p-8 rounded-lg shadow-sm'>

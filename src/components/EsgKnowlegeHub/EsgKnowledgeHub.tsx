@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './style.css';
+import './EsgKnowledgeHub.css';
 
-export const Component = () => {
+export const EsgKnowledgeHubTailwind = () => {
   return (
     <div id='webcrumbs'>
       <div className='w-[1200px] bg-white font-sans'>
@@ -33,7 +33,7 @@ export const Component = () => {
                   strokeLinecap='round'
                 />
               </svg>
-              <h1 className='text-2xl font-bold'>ESG Compass</h1>
+              <h1 className='text-2xl font-bold'>Greendash</h1>
             </div>
             <nav>
               <ul className='flex space-x-8'>
@@ -309,8 +309,7 @@ export const Component = () => {
               </div>
               <h3 className='text-xl font-semibold mb-2'>ESG Reporting Templates</h3>
               <p className='text-gray-600 mb-4'>
-                Ready-to-use templates that align with major ESG frameworks including GRI, SASB, and
-                TCFD.
+                Ready-to-use templates that align with major ESG frameworks
               </p>
               <button className='bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg px-4 py-2 w-full transition-colors duration-300 flex items-center justify-center'>
                 <span>Download Templates</span>

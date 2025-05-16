@@ -1,0 +1,38 @@
+[
+  {
+    "label": "Dashboard",
+    "icon": "dashboard",
+    "href": "#",
+    "isActive": true
+  },
+  {
+    "label": "Reports",
+    "icon": "description",
+    "href": "#"
+  },
+  {
+    "label": "Projects",
+    "icon": "folder_open",
+    "href": "#"
+  },
+  {
+    "label": "Carbon Metrics",
+    "icon": "analytics",
+    "href": "#"
+  },
+  {
+    "label": "Sustainability Goals",
+    "icon": "eco",
+    "href": "#"
+  },
+  {
+    "label": "Team",
+    "icon": "groups",
+    "href": "#"
+  },
+  {
+    "label": "Settings",
+    "icon": "settings",
+    "href": "#"
+  }
+]

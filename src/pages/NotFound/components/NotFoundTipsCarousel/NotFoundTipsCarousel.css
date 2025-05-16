@@ -1,0 +1,18 @@
+.tips-carousel {
+  margin-top: 2.5rem; /* mt-10 */
+  display: flex;
+  gap: 1rem; /* gap-4 */
+  overflow-x: auto;
+  padding: 0.5rem; /* p-2 */
+}
+
+.tip-card {
+  padding: 1rem; /* p-4 */
+  width: 12rem; /* w-48 */
+  text-align: center;
+  flex: 0 0 auto; /* to make it scroll horizontally */
+}
+
+.tip-card__text {
+  color: #374151; /* text-gray-700 */
+}

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './style.css';
+import './UserProfile.css';
 
-export const Component = () => {
+export const UserProfileTailwind = () => {
   return (
     <div id='webcrumbs'>
       <div className='w-[550px] bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:translate-y-[-5px]'>

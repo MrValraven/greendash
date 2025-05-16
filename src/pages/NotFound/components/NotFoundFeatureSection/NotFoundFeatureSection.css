@@ -1,0 +1,24 @@
+.feature-section {
+  margin-top: 2.5rem; /* equivalent to mt-10 */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem; /* equivalent to gap-6 */
+}
+
+.feature-card {
+  padding: 1rem; /* p-4 */
+  width: 16rem; /* w-64 */
+  text-align: center;
+}
+
+.feature-card__title {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600; /* font-semibold */
+  margin: 0;
+}
+
+.feature-card__description {
+  margin-top: 0.25rem; /* mt-1 */
+  color: #6b7280; /* text-gray-500 */
+}

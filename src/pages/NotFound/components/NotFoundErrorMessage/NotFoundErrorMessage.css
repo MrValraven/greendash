@@ -1,0 +1,16 @@
+.not-found-error-message {
+  text-align: center;
+  margin-top: 1rem; /* mt-4 */
+}
+
+.not-found-error-message__title {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700; /* font-bold */
+  color: #1f2937; /* text-gray-800 */
+  margin: 0;
+}
+
+.not-found-error-message__description {
+  margin-top: 0.5rem; /* mt-2 */
+  color: #4b5563; /* text-gray-600 */
+}
