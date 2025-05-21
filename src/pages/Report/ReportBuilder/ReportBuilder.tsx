@@ -1,24 +1,26 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { useReportContext } from 'context/ReportContext/ReportContext';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { reportFormSchema, type ReportFormData } from './schema';
 import FormInput from '../components/Input/Input';
-import './Builder.css';
+import './ReportBuilder.css';
 
-const Builder = () => {
+const ReportBuilder = () => {
   const navigate = useNavigate();
+  const { setReportData } = useReportContext();
 
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<ReportFormData>({
     resolver: zodResolver(reportFormSchema),
   });
 
   const onSubmit: SubmitHandler<ReportFormData> = async (data) => {
     try {
-      console.log('create pdf:', data);
+      setReportData(data);
       navigate('/report/download');
     } catch (error) {
       console.error('Report submission error:', error);
@@ -131,8 +133,8 @@ const Builder = () => {
         />
 
         <div>
-          <button type='submit' className='submit-button'>
-            Finish
+          <button type='submit' className='submit-button' disabled={isSubmitting}>
+            {isSubmitting ? 'Finishing...' : 'Finish'}
           </button>
         </div>
       </form>
@@ -140,4 +142,4 @@ const Builder = () => {
   );
 };
 
-export default Builder;
+export default ReportBuilder;
