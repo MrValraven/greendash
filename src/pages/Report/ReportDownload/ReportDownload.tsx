@@ -6,7 +6,7 @@ import SustainabilityReport from '../../PDFBuilder/SustainabilityReport.tsx';
 
 const ReportDownload = () => {
   const { reportData } = useReportContext();
-  const [error, setError] = useState<string | null>(null);
+  /*  const [error, setError] = useState<string | null>(null); */
 
   /*  const handleDownload = async () => {
     if (!reportData) return;
@@ -57,7 +57,7 @@ const ReportDownload = () => {
         )}
       </div>
 
-      {error && <div className='error-message'>{error}</div>}
+      {/* {error && <div className='error-message'>{error}</div>} */}
 
       <PDFDownloadLink
         document={

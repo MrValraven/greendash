@@ -1,4 +1,3 @@
-import React from 'react';
 import { Document, Page, StyleSheet } from '@react-pdf/renderer';
 
 import CoverPage from './CoverPage';
@@ -24,7 +23,7 @@ const styles2 = StyleSheet.create({
   },
 });
 
-const SustainabilityReport = (props) => (
+const SustainabilityReport = (props: any) => (
   <Document>
     <Page size='A4' style={styles2.page}>
       <CoverPage {...props} />

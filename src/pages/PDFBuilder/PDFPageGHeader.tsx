@@ -1,9 +1,10 @@
-import React from 'react';
 import Logo from '@assets/greendashLogo.svg';
 
-type Props = {};
+type Props = {
+  reportingYear: string;
+};
 
-const PDFPageGHeader = ({ reportingYear }) => {
+const PDFPageGHeader = ({ reportingYear }: Props) => {
   return (
     <div className='pageGHeader'>
       <div className='pageGHeaderContent'>
