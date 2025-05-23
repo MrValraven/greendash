@@ -17,7 +17,13 @@ const styles = StyleSheet.create({
   logo: { width: 300, alignSelf: 'center', marginBottom: 30 },
 });
 
-const CoverPage = ({ ano, nome_empresa, logoUrl }) => (
+interface CoverPageProps {
+  ano: string;
+  nome_empresa: string;
+  logoUrl?: string;
+}
+
+const CoverPage = ({ ano, nome_empresa, logoUrl }: CoverPageProps) => (
   <View style={styles.section}>
     {logoUrl && <Image src={logoUrl} style={globalStyles.logo} />}
     <Text style={styles.title}>Sustainability</Text>

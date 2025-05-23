@@ -7,7 +7,19 @@ const styles = StyleSheet.create({
   paragraph: { marginBottom: 10, lineHeight: 1.5 },
 });
 
-const BasicModule = ({ nome_empresa, module, reportType, practices_sustainable_economy }) => (
+interface BasicModuleProps {
+  nome_empresa: string;
+  module: string;
+  reportType: string;
+  practices_sustainable_economy: string;
+}
+
+const BasicModule = ({
+  nome_empresa,
+  module,
+  reportType,
+  practices_sustainable_economy,
+}: BasicModuleProps) => (
   <View>
     <Text style={globalStyles.sectionTitle}>B1 - Basis for Preparation</Text>
     <Text style={globalStyles.paragraph}>

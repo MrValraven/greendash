@@ -1,11 +1,22 @@
 import './Input.css';
-import { FormInputProps } from './types';
 import Label from './Label';
 import SelectField from './SelectField';
 import TextAreaField from './TextAreaField';
 import FileField from './FileField';
 import InputField from './InputField';
 import ErrorMessage from './ErrorMessage';
+
+interface FormInputProps {
+  id: string;
+  label: string;
+  type: 'text' | 'number' | 'select' | 'textarea' | 'file';
+  register: any; // Adjust the type according to your form library
+  placeholder?: string;
+  error?: string;
+  options?: { value: string; label: string }[]; // For select type
+  accept?: string; // For file type
+  children?: React.ReactNode; // For additional content
+}
 
 const FormInput = ({
   id,
@@ -33,12 +44,7 @@ const FormInput = ({
       )}
 
       {type === 'textarea' && (
-        <TextAreaField
-          id={id}
-          register={register}
-          placeholder={placeholder}
-          error={error}
-        />
+        <TextAreaField id={id} register={register} placeholder={placeholder} error={error} />
       )}
 
       {type === 'file' && (

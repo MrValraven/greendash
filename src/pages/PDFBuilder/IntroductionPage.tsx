@@ -8,7 +8,12 @@ const styles = StyleSheet.create({
   paragraph: { marginBottom: 12, lineHeight: 1.5 },
 });
 
-const IntroductionPage = ({ ano_empresa, nome_empresa }) => (
+interface IntroductionPageProps {
+  ano_empresa: string;
+  nome_empresa: string;
+}
+
+const IntroductionPage = ({ ano_empresa, nome_empresa }: IntroductionPageProps) => (
   <View style={styles.section}>
     <Text style={globalStyles.paragraph}>
       {nome_empresa} | Sustainability Report {ano_empresa}

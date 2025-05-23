@@ -8,7 +8,7 @@ const ReportDownload = () => {
   const { reportData } = useReportContext();
   const [error, setError] = useState<string | null>(null);
 
-  const handleDownload = async () => {
+  /*  const handleDownload = async () => {
     if (!reportData) return;
 
     try {
@@ -17,7 +17,7 @@ const ReportDownload = () => {
       console.error('Error generating report:', error);
       setError('An error occurred while generating the report. Please try again');
     }
-  };
+  }; */
 
   if (!reportData) {
     return <div className='loading'>Loading report data...</div>;
