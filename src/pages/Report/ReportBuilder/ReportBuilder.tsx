@@ -132,7 +132,7 @@ const ReportBuilder = () => {
           error={errors.sustainabilityPractices?.message}
         />
 
-        <div>
+        <div className='submit-button-container'>
           <button type='submit' className='submit-button' disabled={isSubmitting}>
             {isSubmitting ? 'Finishing...' : 'Finish'}
           </button>

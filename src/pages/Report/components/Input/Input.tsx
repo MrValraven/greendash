@@ -23,7 +23,7 @@ const FormInput = ({
   };
 
   return (
-    <div>
+    <div className='input-container-top'>
       <label htmlFor={id}>{label}</label>
 
       {type === 'select' && (
@@ -68,7 +68,7 @@ const FormInput = ({
           type={type}
           {...register}
           placeholder={placeholder}
-          className={error ? 'error-input' : ''}
+          className={`${error ? 'error-input' : ''} custom-input`}
         />
       )}
 

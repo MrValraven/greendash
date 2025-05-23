@@ -1,0 +1,53 @@
+input.custom-input {
+  all: unset;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: white !important;
+  font-family: 'Inter', 'Public Sans', sans-serif;
+}
+
+input,
+select,
+textarea {
+  color: black !important; /* typed text color */
+}
+
+input::placeholder,
+select::placeholder,
+textarea::placeholder {
+  color: #b1afaf; /* placeholder text color */
+  opacity: 1; /* ensures it's not semi-transparent in some browsers */
+}
+
+select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: transparent;
+  font-family: 'Inter', 'Public Sans', sans-serif;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: transparent;
+  font-family: 'Inter', 'Public Sans', sans-serif;
+}
+
+.input-container-top {
+  display: flex;
+  flex-direction: column;
+}
+
+input:-internal-autofill-selected {
+  background-color: white !important;
+  color: black !important;
+}

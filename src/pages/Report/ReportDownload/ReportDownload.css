@@ -1,0 +1,8 @@
+.summary-item {
+  display: flex;
+  gap: 5px;
+}
+
+.summary-item .label {
+  font-weight: bold;
+}
