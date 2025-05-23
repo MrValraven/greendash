@@ -23,7 +23,7 @@ const FormInput = ({
   };
 
   return (
-    <div className='form-group'>
+    <div>
       <label htmlFor={id}>{label}</label>
 
       {type === 'select' && (

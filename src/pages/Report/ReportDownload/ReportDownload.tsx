@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useReportContext } from 'context/ReportContext/ReportContext';
+import { useReportContext } from '../../../context/ReportContext/ReportContext.tsx';
 import './ReportDownload.css';
 
 const ReportDownload = () => {

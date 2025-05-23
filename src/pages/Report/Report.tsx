@@ -10,7 +10,7 @@ const Report = () => {
 
   return (
     <div className='report-container'>
-      <h1>Build your Report</h1>
+      <h1>Build your report</h1>
       <button className='start-report-button' onClick={handleStartReport}>
         Start Now
       </button>

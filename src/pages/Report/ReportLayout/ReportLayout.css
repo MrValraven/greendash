@@ -1,0 +1,16 @@
+.report-layout {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.report-main {
+  flex: 1;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
