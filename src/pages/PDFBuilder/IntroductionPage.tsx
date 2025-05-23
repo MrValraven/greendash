@@ -1,7 +1,5 @@
-import React from 'react';
 import { View, Text, StyleSheet } from '@react-pdf/renderer';
 import { globalStyles } from './styles/globalStyles';
-import PDFPageGHeader from './PDFPageGHeader';
 
 const styles = StyleSheet.create({
   section: { marginBottom: 20 },

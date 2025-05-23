@@ -1,7 +1,5 @@
-import React from 'react';
 import { View, Text, StyleSheet, Image } from '@react-pdf/renderer';
 import { globalStyles } from './styles/globalStyles';
-import Logo from '@assets/greendashLogo.svg';
 
 const styles = StyleSheet.create({
   section: { marginBottom: 40 },

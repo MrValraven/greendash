@@ -1,11 +1,5 @@
-import React from 'react';
-import { View, Text, StyleSheet } from '@react-pdf/renderer';
+import { View, Text } from '@react-pdf/renderer';
 import { globalStyles } from './styles/globalStyles';
-
-const styles = StyleSheet.create({
-  heading: { fontSize: 16, marginVertical: 10 },
-  paragraph: { marginBottom: 10, lineHeight: 1.5 },
-});
 
 interface BasicModuleProps {
   nome_empresa: string;
