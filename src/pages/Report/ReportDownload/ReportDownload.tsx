@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useReportContext } from '../../../context/ReportContext/ReportContext.tsx';
 import './ReportDownload.css';
 import { PDFDownloadLink } from '@react-pdf/renderer';
