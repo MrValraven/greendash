@@ -34,7 +34,7 @@ const SelectField = ({ id, register, placeholder, options, error }: SelectFieldP
         {placeholder}
       </option>
       {options?.map((option) => (
-        <option key={option.value} value={option.value}>
+        <option key={option.value} value={option.label}>
           {option.label}
         </option>
       ))}

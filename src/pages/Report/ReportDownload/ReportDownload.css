@@ -1,8 +1,68 @@
+.download-container {
+  margin: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 23rem;
+}
+
+.download-container h1 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2f2d3d;
+  opacity: 0.7;
+}
+
+.report-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.report-summary h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #2f2d3d;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+
 .summary-item {
   display: flex;
-  gap: 5px;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(52, 49, 67, 0.9);
 }
 
 .summary-item .label {
   font-weight: bold;
+  color: #2f2d3d;
+}
+
+.summary-item .value {
+  color: rgba(52, 49, 67, 0.7);
+}
+
+.pdf-download-link {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pdf-download-link a {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  background-color: var(--primaryColor);
+  box-shadow: #2dc26d69 0px 10px 25px 0px;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pdf-download-link a:hover {
+  background-color: #0d2818;
 }

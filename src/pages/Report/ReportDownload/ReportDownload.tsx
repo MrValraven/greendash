@@ -24,7 +24,7 @@ const ReportDownload = () => {
 
   return (
     <div className='download-container'>
-      <h1>Your Sustainability Report</h1>
+      <h1>Here is your sustainability report! Download it!</h1>
 
       <div className='report-summary'>
         <h2>Report Summary</h2>
@@ -57,24 +57,25 @@ const ReportDownload = () => {
       </div>
 
       {/* {error && <div className='error-message'>{error}</div>} */}
-
-      <PDFDownloadLink
-        document={
-          <SustainabilityReport
-            ano={reportData.reportingYear}
-            nome_empresa={reportData.companyName}
-            module={reportData.module}
-            reportType={reportData.basis}
-            logoUrl={reportData.logo}
-            /*   logoUrl='https://media.licdn.com/dms/image/v2/D4D0BAQEFLBP2amu0LA/company-logo_200_200/company-logo_200_200/0/1734466404994/green_dash_ai_logo?e=1753315200&v=beta&t=2U5-2hFaBRtPRIB6NeU-CCnxjQOADWotNNZb6lLs_Os' */
-            practices_sustainable_economy={reportData.sustainabilityPractices}
-            ano_empresa={reportData.reportingYear}
-          />
-        }
-        fileName='sustainability-report.pdf'
-      >
-        {({ loading }) => (loading ? 'Generating PDF...' : 'Download PDF')}
-      </PDFDownloadLink>
+      <div className='pdf-download-link'>
+        <PDFDownloadLink
+          document={
+            <SustainabilityReport
+              ano={reportData.reportingYear}
+              nome_empresa={reportData.companyName}
+              module={reportData.module}
+              reportType={reportData.basis}
+              logoUrl={reportData.logo}
+              /*   logoUrl='https://media.licdn.com/dms/image/v2/D4D0BAQEFLBP2amu0LA/company-logo_200_200/company-logo_200_200/0/1734466404994/green_dash_ai_logo?e=1753315200&v=beta&t=2U5-2hFaBRtPRIB6NeU-CCnxjQOADWotNNZb6lLs_Os' */
+              practices_sustainable_economy={reportData.sustainabilityPractices}
+              ano_empresa={reportData.reportingYear}
+            />
+          }
+          fileName='sustainability-report.pdf'
+        >
+          {({ loading }) => (loading ? 'Generating PDF...' : 'Download PDF')}
+        </PDFDownloadLink>
+      </div>
     </div>
   );
 };
