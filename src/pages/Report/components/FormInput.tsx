@@ -1,4 +1,4 @@
-import './Input.css';
+import './FormInput.css';
 import Label from './Label';
 import SelectField from './SelectField';
 import TextAreaField from './TextAreaField';
@@ -10,12 +10,12 @@ interface FormInputProps {
   id: string;
   label: string;
   type: 'text' | 'number' | 'select' | 'textarea' | 'file';
-  register: any; // Adjust the type according to your form library
+  register: any;
   placeholder?: string;
   error?: string;
-  options?: { value: string; label: string }[]; // For select type
-  accept?: string; // For file type
-  children?: React.ReactNode; // For additional content
+  options?: { value: string; label: string }[];
+  accept?: string;
+  children?: React.ReactNode;
 }
 
 const FormInput = ({
@@ -30,7 +30,7 @@ const FormInput = ({
   children,
 }: FormInputProps) => {
   return (
-    <div>
+    <div className='form-input-container'>
       <Label htmlFor={id} label={label} />
 
       {type === 'select' && (

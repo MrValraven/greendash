@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import GreendashLogo from '@components/GreendashLogo/GreendashLogo';
+import Button from '@components/Button/Button';
 import NotificationIcon from './icons/NotificationButton.svg';
 import AvatarIcon from './icons/Avatar.svg';
 import ProfileIcon from './icons/ProfileIcon.svg';
@@ -53,10 +54,10 @@ const ReportHeader = () => {
                   </Link>
                 </div>
                 <div className='dropdown-footer'>
-                  <button className='logout-button'>
+                  <Button className='logout-button'>
                     <div>Logout</div>
                     <img src={LogoutIcon} />
-                  </button>
+                  </Button>
                 </div>
               </div>
             )}

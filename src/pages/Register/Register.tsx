@@ -26,13 +26,13 @@ const Register = () => {
       <form onSubmit={handleSubmit(onSubmit)} className='register-form'>
         <h2>Create Account</h2>
 
-        <div className='form-group'>
+        <div className='register-form-group'>
           <label htmlFor='email'>Email</label>
           <input id='email' type='email' {...register('email')} placeholder='Enter your email' />
           {errors.email && <span className='error'>{errors.email.message}</span>}
         </div>
 
-        <div className='form-group'>
+        <div className='register-form-group'>
           <label htmlFor='password'>Password</label>
           <input
             id='password'
@@ -40,10 +40,10 @@ const Register = () => {
             {...register('password')}
             placeholder='Enter your password'
           />
-          {errors.password && <span className='error'>{errors.password.message}</span>}
+          {errors.password && <span className='register-error'>{errors.password.message}</span>}
         </div>
 
-        <Button type='submit' disabled={isSubmitting}>
+        <Button type='submit' disabled={isSubmitting} className='register-button'>
           {isSubmitting ? 'Creating account...' : 'Create Account'}
         </Button>
       </form>

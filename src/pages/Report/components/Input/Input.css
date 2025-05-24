@@ -1,4 +1,4 @@
-input.custom-input {
+/* input.custom-input {
   all: unset;
   width: 100%;
   padding: 0.5rem;
@@ -12,14 +12,14 @@ input.custom-input {
 input,
 select,
 textarea {
-  color: black !important; /* typed text color */
+  color: black !important; 
 }
 
 input::placeholder,
 select::placeholder,
 textarea::placeholder {
-  color: #b1afaf; /* placeholder text color */
-  opacity: 1; /* ensures it's not semi-transparent in some browsers */
+  color: #b1afaf; 
+  opacity: 1;
 }
 
 select {
@@ -50,4 +50,4 @@ textarea {
 input:-internal-autofill-selected {
   background-color: white !important;
   color: black !important;
-}
+} */

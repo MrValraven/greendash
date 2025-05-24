@@ -5,7 +5,6 @@ export const reportFormSchema = z.object({
   reportingYear: z.string().regex(/^\d{4}$/, 'Reporting year is required'),
   logo: z
     .instanceof(FileList)
-    .refine((files) => files.length > 0, 'Company logo is required')
     .refine((files) => {
       return Array.from(files).every((file) =>
         ['image/jpeg', 'image/png', 'image/svg+xml'].includes(file.type),

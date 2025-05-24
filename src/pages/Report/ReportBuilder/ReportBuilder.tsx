@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useReportContext } from '../../../context/ReportContext/ReportContext.tsx';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { reportFormSchema, type ReportFormData } from './schema';
-import FormInput from '../components/Input/Input';
+import Button from '@components/Button/Button.tsx';
+import FormInput from '../components/FormInput.tsx';
 import './ReportBuilder.css';
 
 const ReportBuilder = () => {
@@ -52,7 +53,7 @@ const ReportBuilder = () => {
   ];
 
   return (
-    <div>
+    <div className='report-form-container'>
       <h1>Report Building</h1>
       <form onSubmit={handleSubmit(onSubmit)} className='report-form'>
         <FormInput
@@ -133,9 +134,9 @@ const ReportBuilder = () => {
         />
 
         <div className='submit-button-container'>
-          <button type='submit' className='submit-button' disabled={isSubmitting}>
+          <Button type='submit' className='submit-button' disabled={isSubmitting}>
             {isSubmitting ? 'Finishing...' : 'Finish'}
-          </button>
+          </Button>
         </div>
       </form>
     </div>

@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 type Option = {
   label: string;
   value: string;
@@ -11,20 +13,33 @@ type SelectFieldProps = {
   error?: any;
 };
 
-const SelectField = ({ id, register, placeholder, options, error }: SelectFieldProps) => (
-  <select
-    id={id}
-    {...register}
-    placeholder={placeholder}
-    className={error ? 'error-input' : ''}
-  >
-    <option value=''>Select an Option</option>
-    {options?.map((option) => (
-      <option key={option.value} value={option.value}>
-        {option.label}
+const SelectField = ({ id, register, placeholder, options, error }: SelectFieldProps) => {
+  const [selectedValue, setSelectedValue] = useState('');
+
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedValue(event.target.value);
+  };
+
+  return (
+    <select
+      id={id}
+      {...register}
+      value={selectedValue}
+      onChange={handleChange}
+      className={`${error ? 'error-input' : ''} ${
+        selectedValue === '' ? 'placeholder-selected' : ''
+      }`}
+    >
+      <option value='' hidden disabled>
+        {placeholder}
       </option>
-    ))}
-  </select>
-);
+      {options?.map((option) => (
+        <option key={option.value} value={option.value}>
+          {option.label}
+        </option>
+      ))}
+    </select>
+  );
+};
 
 export default SelectField;

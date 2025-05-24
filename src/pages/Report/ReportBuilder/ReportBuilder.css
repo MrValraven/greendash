@@ -1,26 +1,79 @@
+.report-form-container {
+  margin: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.report-form-container h1 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2f2d3d;
+  opacity: 0.7;
+}
+
 .report-form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
-.report-form .submit-button {
-  display: flex;
-  justify-content: center;
+.report-form label {
+  font-size: 12px;
+  color: #2f2d3d;
+  opacity: 0.9;
+}
+
+.report-form input,
+.report-form select {
+  color: rgba(52, 49, 67, 0.9);
+  width: 50%;
   padding: 8px;
-  gap: 5px;
-  border: none;
-  border-radius: 8px;
-  width: 100%;
-  background-color: #389619;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(52, 49, 67, 0.2);
+  border-radius: 4px;
+}
+
+.report-form input,
+.report-form textarea {
+  cursor: text;
+}
+
+.report-form input::placeholder,
+.report-form textarea::placeholder {
+  color: rgba(52, 49, 67, 0.4);
+}
+
+.report-form select {
   cursor: pointer;
-  max-width: 200px;
-  font-weight: bold;
+}
+
+.report-form select option {
+  color: rgba(52, 49, 67, 0.9);
+}
+
+.report-form select.placeholder-selected {
+  color: rgba(52, 49, 67, 0.4);
+}
+
+.report-form textarea {
+  font-family: 'Inter', 'Public Sans', sans-serif;
+  color: rgba(52, 49, 67, 0.9);
+  height: 35px;
+  padding: 8px 14px;
+  border: 1px solid rgba(52, 49, 67, 0.2);
+  border-radius: 4px;
+  resize: none;
 }
 
 .report-form .submit-button-container {
+  margin-top: 10px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+
+.report-form .submit-button {
+  width: 6rem;
+  padding: 8px;
+  font-size: 14px;
 }

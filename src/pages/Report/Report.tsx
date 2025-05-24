@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import Button from '@components/Button/Button';
 import './Report.css';
 
 const Report = () => {
@@ -11,9 +12,9 @@ const Report = () => {
   return (
     <div className='report-container'>
       <h1>Build your report</h1>
-      <button className='start-report-button' onClick={handleStartReport}>
+      <Button className='start-report-button' onClick={handleStartReport}>
         Start Now
-      </button>
+      </Button>
     </div>
   );
 };
