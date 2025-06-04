@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
 import Home from '@pages/Home/Home.tsx';
 import Login from '@pages/Login/Login.tsx';
 import Register from '@pages/Register/Register.tsx';
@@ -10,16 +10,26 @@ import './styles/global.css';
 const App: React.FC = () => {
   return (
     <Router>
-      <Header />
-      <main>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/reset-password' element={<ResetPassword />} />
-          <Route path='/register' element={<Register />} />
-        </Routes>
-      </main>
-      <Footer />
+      <Routes>
+        <Route
+          path='/'
+          element={
+            <>
+              <Header />
+              <main>
+                <Outlet />
+              </main>
+              <Footer />
+            </>
+          }
+        >
+          <Route index element={<Home />} />
+        </Route>
+
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/reset-password' element={<ResetPassword />} />
+      </Routes>
     </Router>
   );
 };

@@ -2,6 +2,12 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { loginSchema, type LoginFormSchema } from './schema.tsx';
 import Button from '@components/Button/Button.tsx';
+import GreendashLogo from '@components/GreendashLogo/GreendashLogo.tsx';
+import GreendashLogoImg from '../../../public/greendashLogo.png';
+import facebookIcon from './icons/facebook-icon.svg';
+import twitterIcon from './icons/twitter-icon.svg';
+import githubIcon from './icons/github-icon.svg';
+import googleIcon from './icons/google-icon.svg';
 import './Login.css';
 
 const Login = () => {
@@ -22,31 +28,80 @@ const Login = () => {
   };
 
   return (
-    <div className='login-container'>
-      <form onSubmit={handleSubmit(onSubmit)} className='login-form'>
-        <h2>Login</h2>
+    <div className='login-page'>
+      <div className='login-container-wrapper'>
+        <div className='login-bg-green-container-top'></div>
+        <div className='login-bg-green-container-bottom'></div>
+        <div className='login-bg-transp-container-top'></div>
+        <div className='login-bg-transp-container-bottom'></div>
+        <div className='login-container'>
+          <div className='greendash-logo-container'>
+            <div className='greendash-logo'>
+              <img src={GreendashLogoImg} />
+              <GreendashLogo />
+            </div>
+          </div>
+          <div className='login-header'>
+            <h2>Welcome to GreenDash!</h2>
+            <p>Please sign-in to your account and start the adventure</p>
+          </div>
+          <form onSubmit={handleSubmit(onSubmit)} className='login-form'>
+            <div className='login-form-group'>
+              <label htmlFor='email'>Email</label>
+              <input
+                id='email'
+                type='email'
+                {...register('email')}
+                placeholder='Enter your email'
+              />
+              {errors.email && <span className='error'>{errors.email.message}</span>}
+            </div>
 
-        <div className='form-group'>
-          <label htmlFor='email'>Email</label>
-          <input id='email' type='email' {...register('email')} placeholder='Enter your email' />
-          {errors.email && <span className='error'>{errors.email.message}</span>}
+            <div className='login-form-group'>
+              <label htmlFor='password'>Password</label>
+              <input
+                id='password'
+                type='password'
+                {...register('password')}
+                placeholder='Enter your password'
+              />
+              {errors.password && <span className='error'>{errors.password.message}</span>}
+            </div>
+
+            <div className='login-form-options'>
+              <div className='remember-me-container'>
+                <input id='rememberMe' type='checkbox' />
+                <label htmlFor='rememberMe' className='checkbox-icon'></label>
+                <span className='remember-me-text'>Remember Me</span>
+              </div>
+
+              <div className='forgot-password-link'>
+                <a href='/reset-password'>Forgot password?</a>
+              </div>
+            </div>
+
+            <Button className='login-button' type='submit' disabled={isSubmitting}>
+              {isSubmitting ? 'Logging in...' : 'Login'}
+            </Button>
+          </form>
+
+          <div className='register-link-container'>
+            <p>New on our platform?</p>
+            <a href='/register'>Create an account</a>
+          </div>
+
+          <div className='login-social-media-divider'>
+            <span>or</span>
+          </div>
+
+          <div className='login-social-media-options'>
+            <img src={facebookIcon}></img>
+            <img src={twitterIcon}></img>
+            <img src={githubIcon}></img>
+            <img src={googleIcon}></img>
+          </div>
         </div>
-
-        <div className='form-group'>
-          <label htmlFor='password'>Password</label>
-          <input
-            id='password'
-            type='password'
-            {...register('password')}
-            placeholder='Enter your password'
-          />
-          {errors.password && <span className='error'>{errors.password.message}</span>}
-        </div>
-
-        <Button type='submit' disabled={isSubmitting}>
-          {isSubmitting ? 'Logging in...' : 'Login'}
-        </Button>
-      </form>
+      </div>
     </div>
   );
 };
