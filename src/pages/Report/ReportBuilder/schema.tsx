@@ -19,6 +19,7 @@ export const reportFormSchema = z.object({
     .string()
     .min(10, 'Please provide more detailed information about your sustainability practices')
     .max(1000, 'Description is too long(max 1000 characters)'),
+  logoUrl: z.string().optional(),
 });
 
 export type ReportFormData = z.infer<typeof reportFormSchema>;

@@ -16,6 +16,7 @@ interface FormInputProps {
   options?: { value: string; label: string }[];
   accept?: string;
   children?: React.ReactNode;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const FormInput = ({
@@ -28,6 +29,7 @@ const FormInput = ({
   options,
   accept,
   children,
+  onChange,
 }: FormInputProps) => {
   return (
     <div className='form-input-container'>
@@ -54,6 +56,7 @@ const FormInput = ({
           placeholder={placeholder}
           accept={accept}
           error={error}
+          onChange={onChange}
         />
       )}
 

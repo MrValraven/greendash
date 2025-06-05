@@ -2,9 +2,12 @@ import { useReportContext } from '../../../context/ReportContext/ReportContext.t
 import './ReportDownload.css';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import SustainabilityReport from '../../PDFBuilder/SustainabilityReport.tsx';
+import { useEffect, useState } from 'react';
 
 const ReportDownload = () => {
   const { reportData } = useReportContext();
+  const [transformedText, setTransformedText] = useState('');
+  const [transformedSub, setTransformedSub] = useState('');
   /*  const [error, setError] = useState<string | null>(null); */
 
   /*  const handleDownload = async () => {
@@ -17,6 +20,52 @@ const ReportDownload = () => {
       setError('An error occurred while generating the report. Please try again');
     }
   }; */
+
+  useEffect(() => {
+    const getDataFromAI = async (text: string, chapterName: string) => {
+      try {
+        const response = await fetch('http://localhost:3000/api/v1/auth/ai/build', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            reportChapterName: chapterName,
+            userInput: text,
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const data = await response.json();
+        return data.section;
+      } catch (error) {
+        console.error('Error fetching data from AI:', error);
+        // setError('Failed to fetch data from AI. Please try again later.');
+      }
+    };
+
+    const getData = async () => {
+      if (reportData && reportData.sustainabilityPractices) {
+        const sustainablePractices = await getDataFromAI(
+          reportData.sustainabilityPractices,
+          'Sustainable Practices',
+        );
+        setTransformedText(sustainablePractices);
+      }
+      if (reportData && reportData.subsidiaries) {
+        const subsidiaries = await getDataFromAI(
+          reportData.subsidiaries,
+          'Company subsidiaries in the report',
+        );
+        setTransformedSub(subsidiaries);
+      }
+    };
+
+    getData();
+  }, []);
 
   if (!reportData) {
     return <div className='loading'>Loading report data...</div>;
@@ -48,12 +97,15 @@ const ReportDownload = () => {
           <span className='label'>Basis:</span>
           <span className='value'>{reportData.basis}</span>
         </div>
-        {reportData.basis === 'consolidated' && reportData.subsidiaries && (
-          <div className='summary-item'>
-            <span className='label'>Subsidiaries:</span>
-            <span className='value'>{reportData.subsidiaries}</span>
-          </div>
-        )}
+        <div className='summary-item'>
+          <span className='label'>Sustainability practices:</span>
+          <span className='value'>{transformedText || reportData.sustainabilityPractices}</span>
+        </div>
+
+        <div className='summary-item'>
+          <span className='label'>Subsidiaries:</span>
+          <span className='value'>{transformedSub || reportData.subsidiaries}</span>
+        </div>
       </div>
 
       {/* {error && <div className='error-message'>{error}</div>} */}
@@ -65,9 +117,9 @@ const ReportDownload = () => {
               nome_empresa={reportData.companyName}
               module={reportData.module}
               reportType={reportData.basis}
-              logoUrl={reportData.logo}
-              /*   logoUrl='https://media.licdn.com/dms/image/v2/D4D0BAQEFLBP2amu0LA/company-logo_200_200/company-logo_200_200/0/1734466404994/green_dash_ai_logo?e=1753315200&v=beta&t=2U5-2hFaBRtPRIB6NeU-CCnxjQOADWotNNZb6lLs_Os' */
-              practices_sustainable_economy={reportData.sustainabilityPractices}
+              logoUrl={reportData.logoUrl}
+              subsidiaries={transformedSub || reportData.subsidiaries}
+              practices_sustainable_economy={transformedText || reportData.sustainabilityPractices}
               ano_empresa={reportData.reportingYear}
             />
           }

@@ -32,7 +32,7 @@ const SustainabilityReport = (props: any) => (
       <IntroductionPage {...props} />
     </Page>
     <Page size='A4' style={styles.page}>
-      <IndexPage />
+      <IndexPage {...props} />
     </Page>
     <Page size='A4' style={styles.page}>
       <BasicModule {...props} />

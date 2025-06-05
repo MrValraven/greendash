@@ -4,9 +4,10 @@ type FileFieldProps = {
   placeholder?: string;
   accept?: string;
   error?: any;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const FileField = ({ id, register, placeholder, accept, error }: FileFieldProps) => (
+const FileField = ({ id, register, placeholder, accept, error, onChange }: FileFieldProps) => (
   <input
     id={id}
     type='file'
@@ -14,6 +15,7 @@ const FileField = ({ id, register, placeholder, accept, error }: FileFieldProps)
     placeholder={placeholder}
     accept={accept}
     className={error ? 'error-input' : ''}
+    onChange={onChange}
   />
 );
 

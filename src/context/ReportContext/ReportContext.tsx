@@ -3,7 +3,7 @@ import { createContext, useState, ReactNode, useContext } from 'react';
 
 interface ReportContextType {
   reportData: Partial<ReportFormData> | null;
-  setReportData: (data: Partial<ReportFormData>) => void;
+  setReportData: (data: Partial<ReportFormData | any>) => void;
 }
 
 const ReportContext = createContext<ReportContextType | undefined>(undefined);

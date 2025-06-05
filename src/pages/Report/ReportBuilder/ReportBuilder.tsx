@@ -6,10 +6,23 @@ import { reportFormSchema, type ReportFormData } from './schema';
 import Button from '@components/Button/Button.tsx';
 import FormInput from '../components/FormInput.tsx';
 import './ReportBuilder.css';
+import { useState } from 'react';
 
 const ReportBuilder = () => {
   const navigate = useNavigate();
   const { setReportData } = useReportContext();
+
+  const [logoPreview, setLogoPreview] = useState<string | null>(null);
+
+  const handleLogoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file && file.type.startsWith('image/')) {
+      const imageUrl = URL.createObjectURL(file);
+      setLogoPreview(imageUrl);
+    } else {
+      setLogoPreview(null);
+    }
+  };
 
   const {
     register,
@@ -21,7 +34,7 @@ const ReportBuilder = () => {
 
   const onSubmit: SubmitHandler<ReportFormData> = async (data) => {
     try {
-      setReportData(data);
+      setReportData({ ...data, logoUrl: logoPreview });
       navigate('/report/download');
     } catch (error) {
       console.error('Report submission error:', error);
@@ -83,7 +96,18 @@ const ReportBuilder = () => {
           placeholder='Upload your logo'
           accept='image/*'
           error={errors.logo?.message}
+          onChange={handleLogoChange}
         />
+
+        {logoPreview && (
+          <div className='image-preview'>
+            <img
+              src={logoPreview}
+              alt='Logo preview'
+              style={{ maxWidth: '200px', marginTop: '1rem' }}
+            />
+          </div>
+        )}
 
         <FormInput
           id='region'
