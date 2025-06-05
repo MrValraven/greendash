@@ -34,17 +34,20 @@ const Login = () => {
         <div className='login-bg-green-container-bottom'></div>
         <div className='login-bg-transp-container-top'></div>
         <div className='login-bg-transp-container-bottom'></div>
+
         <div className='login-container'>
-          <div className='greendash-logo-container'>
-            <div className='greendash-logo'>
+          <div className='login-greendash-logo-container'>
+            <div className='login-greendash-logo'>
               <img src={GreendashLogoImg} />
               <GreendashLogo />
             </div>
           </div>
+
           <div className='login-header'>
             <h2>Welcome to GreenDash!</h2>
             <p>Please sign-in to your account and start the adventure</p>
           </div>
+
           <form onSubmit={handleSubmit(onSubmit)} className='login-form'>
             <div className='login-form-group'>
               <label htmlFor='email'>Email</label>

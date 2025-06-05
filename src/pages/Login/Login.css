@@ -70,19 +70,19 @@
 }
 
 /* greenDash logo */
-.greendash-logo-container {
+.login-greendash-logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.greendash-logo {
+.login-greendash-logo {
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
-.greendash-logo img {
+.login-greendash-logo img {
   width: 30px;
 }
 
@@ -220,6 +220,8 @@
   padding: 10px;
 }
 
+/* register link */
+
 .register-link-container {
   display: flex;
   justify-content: center;
@@ -239,7 +241,7 @@
   color: #399c17;
 }
 
-.register-link a:hover {
+.register-link-container a:hover {
   text-decoration: underline;
 }
 
@@ -275,4 +277,9 @@
 
 .login-social-media-options img {
   cursor: pointer;
+}
+
+.login-form-group .error {
+  font-size: 12px;
+  color: #d9304c;
 }
