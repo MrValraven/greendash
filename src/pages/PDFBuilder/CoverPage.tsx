@@ -3,7 +3,7 @@ import { globalStyles } from './styles/globalStyles';
 import capaImage from '@assets/capa.jpg';
 
 const styles = StyleSheet.create({
-  section: { marginBottom: 40 },
+  section: { padding: 20 },
   title: {
     fontSize: 42,
     textAlign: 'left',
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     wordBreak: 'keep-all',
     overflowWrap: 'normal',
   },
-  company: { fontSize: 18, textAlign: 'left', marginBottom: 20 },
+  company: { fontSize: 16, textAlign: 'left', marginBottom: 20, fontWeight: 500 },
   logo: { width: '100%', alignSelf: 'center', marginTop: 30 },
   barra: {
     width: '100%',

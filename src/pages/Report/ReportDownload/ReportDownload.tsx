@@ -50,7 +50,7 @@ const ReportDownload = () => {
     const getData = async () => {
       if (reportData && reportData.sustainabilityPractices) {
         const sustainablePractices = await getDataFromAI(
-          reportData.sustainabilityPractices,
+          `These practices encompass: ${reportData.sustainabilityPractices}. You should start the phrase with "These practices encompass: "`,
           'Sustainable Practices',
         );
         setTransformedText(sustainablePractices);
@@ -58,7 +58,7 @@ const ReportDownload = () => {
       if (reportData && reportData.subsidiaries) {
         const subsidiaries = await getDataFromAI(
           reportData.subsidiaries,
-          'Company subsidiaries in the report',
+          'Company subsidiaries in the report. Please do not make up any data, just make it adjusted to be human readable and start by saying "Our company has the following subsidiaries: "',
         );
         setTransformedSub(subsidiaries);
       }
