@@ -7,6 +7,7 @@ import GreendashLogoImg from '../../../public/greendashLogo.png';
 
 import AccountInformationForm from './components/AccountInformationForm/AccountInformationForm.tsx';
 import CompanyInformationForm from './components/CompanyInformationForm/CompanyInformationForm.tsx';
+import EmailConfirmationPage from './components/EmailConfirmationPage/EmailConfirmationPage.tsx';
 
 import './Register.css';
 
@@ -60,9 +61,10 @@ const Register = () => {
 
       if (activeStep === 2) {
         setActiveStep(3);
-      } else {
-        await submitRegistrationToAPI(updatedData);
+        return;
       }
+      await submitRegistrationToAPI(updatedData);
+      setActiveStep(4);
     } catch (error) {
       console.error('Company registration error:', error);
     }
@@ -118,6 +120,8 @@ const Register = () => {
           defaultValues={registrationData}
         />
       )}
+
+      {activeStep === 4 && <EmailConfirmationPage userEmail={registrationData.email || ''} />}
     </div>
   );
 };
