@@ -1,6 +1,5 @@
 export interface RegistrationStepsProps {
   activeStep: number;
-  onStepChange: (step: number) => void;
 }
 
 export interface StepInfo {

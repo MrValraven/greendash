@@ -2,6 +2,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { loginSchema, type LoginFormSchema } from './schema.tsx';
 import Button from '@components/Button/Button.tsx';
+import FormInput from '@components/FormInput/FormInput.tsx';
 import GreendashLogo from '@components/GreendashLogo/GreendashLogo.tsx';
 import GreendashLogoImg from '../../../public/greendashLogo.png';
 import facebookIcon from './icons/facebook-icon.svg';
@@ -49,27 +50,23 @@ const Login = () => {
           </div>
 
           <form onSubmit={handleSubmit(onSubmit)} className='login-form'>
-            <div className='login-form-group'>
-              <label htmlFor='email'>Email</label>
-              <input
-                id='email'
-                type='email'
-                {...register('email')}
-                placeholder='Enter your email'
-              />
-              {errors.email && <span className='error'>{errors.email.message}</span>}
-            </div>
+            <FormInput
+              id='email'
+              label='Email'
+              type='text'
+              register={register('email')}
+              placeholder='Enter your email'
+              error={errors.email?.message}
+            />
 
-            <div className='login-form-group'>
-              <label htmlFor='password'>Password</label>
-              <input
-                id='password'
-                type='password'
-                {...register('password')}
-                placeholder='Enter your password'
-              />
-              {errors.password && <span className='error'>{errors.password.message}</span>}
-            </div>
+            <FormInput
+              id='password'
+              label='Password'
+              type='text'
+              register={register('password')}
+              placeholder='Enter your password'
+              error={errors.password?.message}
+            />
 
             <div className='login-form-options'>
               <div className='remember-me-container'>

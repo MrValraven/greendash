@@ -11,7 +11,9 @@ import arrowStepIcon from '../../icons/arrow-stepIcon.svg';
 
 import { RegistrationStepsProps, StepInfo } from './types';
 
-const RegistrationSteps: React.FC<RegistrationStepsProps> = ({ activeStep, onStepChange }) => {
+import './RegistrationSteps.css';
+
+const RegistrationSteps: React.FC<RegistrationStepsProps> = ({ activeStep }) => {
   const steps: StepInfo[] = [
     {
       id: 1,
@@ -37,41 +39,35 @@ const RegistrationSteps: React.FC<RegistrationStepsProps> = ({ activeStep, onSte
   ];
 
   return (
-    <div className='register-steps-container'>
-      <h1>Sign up</h1>
-      <div className='register-steps'>
-        {steps.map((step, index) => (
-          <React.Fragment key={step.id}>
-            <div className='register-step-container'>
-              <button
-                className={`register-step-graphic ${activeStep === step.id ? 'active' : ''}`}
-                onClick={() => onStepChange(step.id)}
-              >
-                <img
-                  src={step.iconBlack}
-                  className={activeStep === step.id ? 'hidden' : ''}
-                  alt={step.title}
-                />
-                <img
-                  src={step.iconWhite}
-                  className={activeStep === step.id ? '' : 'hidden'}
-                  alt={step.title}
-                />
-              </button>
-              <div className='register-step-info'>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-              </div>
+    <div className='register-steps'>
+      {steps.map((step, index) => (
+        <React.Fragment key={step.id}>
+          <div className='register-step-container'>
+            <div className={`register-step-graphic ${activeStep === step.id ? 'active' : ''}`}>
+              <img
+                src={step.iconBlack}
+                className={activeStep === step.id ? 'hidden' : ''}
+                alt={step.title}
+              />
+              <img
+                src={step.iconWhite}
+                className={activeStep === step.id ? '' : 'hidden'}
+                alt={step.title}
+              />
             </div>
+            <div className='register-step-info'>
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
+            </div>
+          </div>
 
-            {index < steps.length - 1 && (
-              <div className='register-step-arrow'>
-                <img src={arrowStepIcon} alt='Arrow Step' />
-              </div>
-            )}
-          </React.Fragment>
-        ))}
-      </div>
+          {index < steps.length - 1 && (
+            <div className='register-step-arrow'>
+              <img src={arrowStepIcon} alt='Arrow Step' />
+            </div>
+          )}
+        </React.Fragment>
+      ))}
     </div>
   );
 };

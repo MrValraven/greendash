@@ -110,18 +110,18 @@
   gap: 20px;
 }
 
-.login-form-group {
+.login-form .form-input-container {
   display: flex;
   flex-direction: column;
 }
 
-.login-form-group label {
+.login-form .form-input-container label {
   font-size: 12px;
   color: rgb(47, 43, 61);
   opacity: 0.9;
 }
 
-.login-form-group input {
+.login-form .form-input-container input {
   padding: 8px 15px;
   border: 1px solid rgba(47, 43, 61, 0.22);
   border-radius: 4px;
@@ -130,12 +130,12 @@
   background-color: white;
 }
 
-.login-form-group input:focus {
+.login-form .form-input-container input:focus {
   border-color: #399c17;
   outline: none;
 }
 
-.login-form-group input::placeholder {
+.login-form .form-input-container input::placeholder {
   color: rgba(47, 43, 61, 0.4);
 }
 
@@ -279,7 +279,7 @@
   cursor: pointer;
 }
 
-.login-form-group .error {
+.login-form .form-input-container .error {
   font-size: 12px;
   color: #d9304c;
 }

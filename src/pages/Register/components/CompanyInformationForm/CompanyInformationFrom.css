@@ -1,0 +1,177 @@
+.company-info-step-container {
+  width: 100%;
+  display: flex;
+  gap: 100px;
+  overflow: hidden;
+}
+
+.company-info-image-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.company-info-img-bg {
+  height: 100%;
+  background-color: #fbfbfb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.company-info-image-container img {
+  width: 80%;
+}
+
+.company-info-box-bg {
+  height: 80px;
+  background-color: rgb(248, 248, 250);
+}
+
+.company-info-content-container {
+  flex: 1;
+  padding-right: 100px;
+  padding-top: 80px;
+  padding-bottom: 50px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #399c17 transparent;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.company-info-form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.company-info-title-container h2 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.company-info-title-container p {
+  font-size: 14px;
+  color: rgba(47, 43, 61, 0.7);
+}
+
+.company-info-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.company-info-form .form-input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.company-info-form .form-input-container label {
+  font-size: 12px;
+  color: rgba(47, 43, 61, 0.9);
+}
+
+.company-info-form .form-input-container input,
+.company-info-form .form-input-container select {
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  color: rgba(47, 43, 61, 0.9);
+  border: 1px solid rgba(47, 43, 61, 0.2);
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.company-info-form .form-input-container input::placeholder {
+  color: rgba(47, 43, 61, 0.4);
+}
+
+.company-info-form .form-input-container input:focus,
+.company-info-form .form-input-container select:focus {
+  border-color: #399c17;
+  outline: none;
+}
+
+.company-info-form .form-input-container select {
+  cursor: pointer;
+}
+
+.company-info-form .form-input-container select option {
+  color: rgba(47, 43, 61, 0.9);
+}
+
+.company-info-form .form-input-container select.placeholder-selected {
+  color: rgba(47, 43, 61, 0.4);
+}
+
+.date-of-establishment-input-container {
+  width: 40%;
+}
+
+.company-info-form-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.company-info-form-group .form-input-container {
+  flex: 1;
+}
+
+.company-info-form h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.company-info-form .form-input-container input[type='number']::-webkit-inner-spin-button,
+.company-info-form .form-input-container input[type='number']::-webkit-outer-spin-button {
+  appearance: none;
+}
+
+/* Style for date input */
+.date-of-establishment-input-container .form-input-container input[type='date'] {
+  position: relative;
+  font-family: 'Inter', 'Public Sans', sans-serif;
+  color: rgba(47, 43, 61, 0.9);
+}
+
+.date-of-establishment-input-container
+  .form-input-container
+  input[type='date']::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.date-of-establishment-input-container
+  .form-input-container
+  input[type='date']:not(:focus):not(:valid) {
+  color: transparent;
+}
+
+.date-of-establishment-input-container
+  .form-input-container
+  input[type='date']:not(:focus):not(:valid)::before {
+  content: 'DD/MM/YYYY';
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(47, 43, 61, 0.4);
+  pointer-events: none;
+  font-family: 'Inter', 'Public Sans', sans-serif;
+  font-size: 14px;
+}

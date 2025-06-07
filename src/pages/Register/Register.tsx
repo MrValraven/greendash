@@ -5,42 +5,78 @@ import { RegisterFormSchema } from './schema.tsx';
 import GreendashLogo from '@components/GreendashLogo/GreendashLogo.tsx';
 import GreendashLogoImg from '../../../public/greendashLogo.png';
 
-import RegistrationSteps from './components/RegistrationSteps/RegistrationSteps.tsx';
 import AccountInformationForm from './components/AccountInformationForm/AccountInformationForm.tsx';
+import CompanyInformationForm from './components/CompanyInformationForm/CompanyInformationForm.tsx';
 
 import './Register.css';
 
+interface RegistrationData {
+  // Account info
+  username?: string;
+  email?: string;
+  password?: string;
+
+  // Company info
+  companyName?: string;
+  businessSector?: string;
+  companyNIF?: string;
+  dateOfEstablishment?: string;
+  contactNumber?: string;
+  pincode?: string;
+  address?: string;
+  city?: string;
+  country?: string;
+  netTurnover?: string;
+  assetsValue?: string;
+}
+
 const Register = () => {
   const [activeStep, setActiveStep] = useState(1);
-  const [registrationData, setRegistrationData] = useState<RegisterFormSchema | null>(null);
+  const [registrationData, setRegistrationData] = useState<RegistrationData>({});
 
-  const handleSubmit: SubmitHandler<RegisterFormSchema> = async (data) => {
+  //These handle functions and the RegistrationData is temporary, it will be replaced with the actual API calls and the data will be checked against a schema
+
+  const handleAccountSubmit: SubmitHandler<RegisterFormSchema> = async (data) => {
     try {
-      setRegistrationData(data);
-      console.log('Registration data:', data);
+      const updatedData = {
+        ...registrationData,
+        ...data,
+      };
+      setRegistrationData(updatedData);
 
-      if (activeStep < 3) {
-        setActiveStep(activeStep + 1);
-      } else {
-        // submit to api
-        await submitRegistrationToAPI(data);
-      }
+      console.log('Account data:', data);
+
+      setActiveStep(2);
     } catch (error) {
       console.error('Registration error:', error);
     }
   };
 
-  const submitRegistrationToAPI = async (data: RegisterFormSchema) => {
+  const handleCompanySubmit = async (data: any) => {
+    try {
+      const updatedData = { ...registrationData, ...data };
+      setRegistrationData(updatedData);
+      console.log('Company data:', data);
+
+      if (activeStep === 2) {
+        setActiveStep(3);
+      } else {
+        await submitRegistrationToAPI(updatedData);
+      }
+    } catch (error) {
+      console.error('Company registration error:', error);
+    }
+  };
+
+  const submitRegistrationToAPI = async (data: RegistrationData) => {
     try {
       // Here we will make the API call to submit the registration data
+      /* const parsedData = { username: data.username, email: data.email, password: data.password }; */
+
       console.log('Submitting registration data to API:', data);
     } catch (error) {
       console.error('Error submitting registration data:', error);
     }
-  };
-
-  const handleStepChange = (step: number) => {
-    setActiveStep(step);
   };
 
   const handlePreviousStep = () => {
@@ -60,10 +96,27 @@ const Register = () => {
         </div>
       </div>
 
-      <RegistrationSteps activeStep={activeStep} onStepChange={handleStepChange} />
-
       {activeStep === 1 && (
-        <AccountInformationForm onSubmit={handleSubmit} onPrevious={handlePreviousStep} />
+        <AccountInformationForm onSubmit={handleAccountSubmit} onPrevious={handlePreviousStep} />
+      )}
+
+      {activeStep === 2 && (
+        <CompanyInformationForm
+          onSubmit={handleCompanySubmit}
+          onPrevious={handlePreviousStep}
+          activeStep={activeStep}
+          isReviewMode={false}
+        />
+      )}
+
+      {activeStep === 3 && (
+        <CompanyInformationForm
+          onSubmit={handleCompanySubmit}
+          onPrevious={handlePreviousStep}
+          activeStep={activeStep}
+          isReviewMode={true}
+          defaultValues={registrationData}
+        />
       )}
     </div>
   );
