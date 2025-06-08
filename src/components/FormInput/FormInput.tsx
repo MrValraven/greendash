@@ -9,7 +9,7 @@ import ErrorMessage from './Components/ErrorMessage';
 interface FormInputProps {
   id: string;
   label: string;
-  type: 'text' | 'number' | 'select' | 'textarea' | 'file' | 'date' | 'checkbox';
+  type: 'text' | 'number' | 'select' | 'textarea' | 'file' | 'date' | 'checkbox' | 'password';
   register?: any;
   placeholder?: string;
   error?: string;
@@ -73,7 +73,7 @@ const FormInput = ({
         <DateField id={id} register={register} defaultValue={defaultValue} error={error} />
       )}
 
-      {(type === 'text' || type === 'number') && (
+      {(type === 'text' || type === 'number' || type == 'password') && (
         <InputField
           id={id}
           type={type}

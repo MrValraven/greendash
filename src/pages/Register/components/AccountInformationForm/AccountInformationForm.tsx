@@ -1,9 +1,10 @@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { registerSchema, type RegisterFormSchema } from '../../schema';
+import { accountSchema, type AccountFormData } from '../../schema';
 import { AccountInformationFormProps } from './types';
 import RegistrationSteps from '../RegistrationSteps/RegistrationSteps';
 import StepButtons from '../StepButtons/StepButtons';
+import FormInput from '@components/FormInput/FormInput';
 
 import './AccountInformation.css';
 
@@ -12,8 +13,8 @@ const AccountInformationForm = ({ onSubmit, onPrevious }: AccountInformationForm
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<RegisterFormSchema>({
-    resolver: zodResolver(registerSchema),
+  } = useForm<AccountFormData>({
+    resolver: zodResolver(accountSchema),
   });
 
   const handlePrevious = (e: React.MouseEvent) => {
@@ -36,39 +37,43 @@ const AccountInformationForm = ({ onSubmit, onPrevious }: AccountInformationForm
 
         <form onSubmit={handleSubmit(onSubmit)} className='account-info-form'>
           <div className='username-email-input-container'>
-            <div className='account-info-form-group'>
-              <label htmlFor='username'>Username</label>
-              <input id='username' type='text' placeholder='Enter your username' />
-            </div>
+            <FormInput
+              id='username'
+              label='Username'
+              type='text'
+              placeholder='Enter your username'
+              register={register('username')}
+              error={errors.username?.message}
+            />
 
-            <div className='account-info-form-group'>
-              <label htmlFor='email'>Email</label>
-              <input
-                id='email'
-                type='email'
-                {...register('email')}
-                placeholder='Enter your email'
-              />
-              {errors.email && <span className='error'>{errors.email.message}</span>}
-            </div>
+            <FormInput
+              id='email'
+              label='Email'
+              type='text'
+              placeholder='Enter your email'
+              register={register('email')}
+              error={errors.email?.message}
+            />
           </div>
 
           <div className='password-inputs-container'>
-            <div className='account-info-form-group'>
-              <label htmlFor='password'>Password</label>
-              <input
-                id='password'
-                type='password'
-                {...register('password')}
-                placeholder='Enter your password'
-              />
-              {errors.password && <span className='error'>{errors.password.message}</span>}
-            </div>
+            <FormInput
+              id='password'
+              label='Password'
+              type='password'
+              placeholder='Enter your password'
+              register={register('password')}
+              error={errors.password?.message}
+            />
 
-            <div className='account-info-form-group'>
-              <label htmlFor='confirmPassword'>Confirm Password</label>
-              <input id='confirmPassword' type='password' placeholder='Confirm your password' />
-            </div>
+            <FormInput
+              id='confirmPassword'
+              label='Confirm Password'
+              type='password'
+              placeholder='Confirm your password'
+              register={register('confirmPassword')}
+              error={errors.confirmPassword?.message}
+            />
           </div>
 
           <StepButtons onPrevious={handlePrevious} isFirstStep={false} />

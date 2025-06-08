@@ -1,6 +1,6 @@
 type InputFieldProps = {
   id: string;
-  type: 'text' | 'number';
+  type: 'text' | 'number' | 'password';
   register?: any;
   placeholder?: string;
   defaultValue?: any;

@@ -1,7 +1,7 @@
 import { SubmitHandler } from 'react-hook-form';
-import { RegisterFormSchema } from '../../schema';
+import { AccountFormData } from '../../schema';
 
 export interface AccountInformationFormProps {
-  onSubmit: SubmitHandler<RegisterFormSchema>;
+  onSubmit: SubmitHandler<AccountFormData>;
   onPrevious?: () => void;
 }

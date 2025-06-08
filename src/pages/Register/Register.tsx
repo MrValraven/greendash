@@ -1,6 +1,8 @@
+import axios from 'axios';
 import { useState } from 'react';
 import { SubmitHandler } from 'react-hook-form';
-import { RegisterFormSchema } from './schema.tsx';
+import { AccountFormData, CompanyFormData } from './schema.tsx';
+import { RegistrationData } from './types.tsx';
 
 import GreendashLogo from '@components/GreendashLogo/GreendashLogo.tsx';
 import GreendashLogoImg from '../../../public/greendashLogo.png';
@@ -11,33 +13,30 @@ import EmailConfirmationPage from './components/EmailConfirmationPage/EmailConfi
 
 import './Register.css';
 
-interface RegistrationData {
-  // Account info
-  username?: string;
-  email?: string;
-  password?: string;
-
-  // Company info
-  companyName?: string;
-  businessSector?: string;
-  companyNIF?: string;
-  dateOfEstablishment?: string;
-  contactNumber?: string;
-  pincode?: string;
-  address?: string;
-  city?: string;
-  country?: string;
-  netTurnover?: string;
-  assetsValue?: string;
-}
-
 const Register = () => {
   const [activeStep, setActiveStep] = useState(1);
   const [registrationData, setRegistrationData] = useState<RegistrationData>({});
 
-  //These handle functions and the RegistrationData is temporary, it will be replaced with the actual API calls and the data will be checked against a schema
+  //These handle functions are temporary
 
-  const handleAccountSubmit: SubmitHandler<RegisterFormSchema> = async (data) => {
+  const submitRegistrationToAPI = async (data: RegistrationData): Promise<boolean> => {
+    try {
+      const apiData = { email: data.email, password: data.password };
+
+      const response = await axios.post(
+        'https://http://localhost:3000/api/v1/auth/users/register',
+        apiData,
+      );
+
+      console.log('Submitting registration data to API:', response.data);
+      return true;
+    } catch (error) {
+      console.error('Error submitting registration data:', error);
+      return false;
+    }
+  };
+
+  const handleAccountSubmit: SubmitHandler<AccountFormData> = async (data) => {
     try {
       const updatedData = {
         ...registrationData,
@@ -45,39 +44,29 @@ const Register = () => {
       };
       setRegistrationData(updatedData);
 
-      console.log('Account data:', data);
-
       setActiveStep(2);
     } catch (error) {
       console.error('Registration error:', error);
     }
   };
 
-  const handleCompanySubmit = async (data: any) => {
+  const handleCompanySubmit: SubmitHandler<Partial<CompanyFormData>> = async (data) => {
     try {
       const updatedData = { ...registrationData, ...data };
       setRegistrationData(updatedData);
-      console.log('Company data:', data);
 
       if (activeStep === 2) {
         setActiveStep(3);
         return;
       }
-      await submitRegistrationToAPI(updatedData);
-      setActiveStep(4);
+
+      const success = await submitRegistrationToAPI(updatedData);
+
+      if (success) {
+        setActiveStep(4);
+      }
     } catch (error) {
       console.error('Company registration error:', error);
-    }
-  };
-
-  const submitRegistrationToAPI = async (data: RegistrationData) => {
-    try {
-      // Here we will make the API call to submit the registration data
-      /* const parsedData = { username: data.username, email: data.email, password: data.password }; */
-
-      console.log('Submitting registration data to API:', data);
-    } catch (error) {
-      console.error('Error submitting registration data:', error);
     }
   };
 

@@ -1,4 +1,6 @@
 import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { companySchema, type CompanyFormData } from '../../schema';
 import RegistrationSteps from '../RegistrationSteps/RegistrationSteps';
 import StepButtons from '../StepButtons/StepButtons';
 import { CompanyInformationFormProps } from './types';
@@ -15,7 +17,14 @@ const CompanyInformationForm = ({
   isReviewMode,
   defaultValues = {},
 }: CompanyInformationFormProps) => {
-  const { register, handleSubmit } = useForm({ defaultValues });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<CompanyFormData>({
+    resolver: zodResolver(companySchema),
+    defaultValues,
+  });
 
   const handlePrevious = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -71,6 +80,7 @@ const CompanyInformationForm = ({
               placeholder='Enter Company Name'
               register={register('companyName')}
               defaultValue={defaultValues.companyName}
+              error={errors.companyName?.message}
             />
 
             <FormInput
@@ -81,6 +91,7 @@ const CompanyInformationForm = ({
               options={businessSectorOptions}
               register={register('businessSector')}
               defaultValue={defaultValues.businessSector}
+              error={errors.businessSector?.message}
             />
 
             <FormInput
@@ -89,6 +100,7 @@ const CompanyInformationForm = ({
               type='number'
               register={register('companyNIF')}
               defaultValue={defaultValues.companyNIF}
+              error={errors.companyNIF?.message}
             />
 
             <div className='date-of-establishment-input-container'>
@@ -98,6 +110,7 @@ const CompanyInformationForm = ({
                 type='date'
                 register={register('dateOfEstablishment')}
                 defaultValue={defaultValues.dateOfEstablishment}
+                error={errors.dateOfEstablishment?.message}
               />
             </div>
 
@@ -121,6 +134,7 @@ const CompanyInformationForm = ({
                 placeholder='202 555 0111'
                 register={register('contactNumber')}
                 defaultValue={defaultValues.contactNumber}
+                error={errors.contactNumber?.message}
               />
 
               <FormInput
@@ -130,6 +144,7 @@ const CompanyInformationForm = ({
                 placeholder='Postal Code'
                 register={register('pincode')}
                 defaultValue={defaultValues.pincode}
+                error={errors.pincode?.message}
               />
             </div>
 
@@ -140,6 +155,7 @@ const CompanyInformationForm = ({
               placeholder='Address'
               register={register('address')}
               defaultValue={defaultValues.address}
+              error={errors.address?.message}
             />
 
             <div className='company-info-form-group'>
@@ -150,6 +166,7 @@ const CompanyInformationForm = ({
                 placeholder='Lisbon'
                 register={register('city')}
                 defaultValue={defaultValues.city}
+                error={errors.city?.message}
               />
 
               <FormInput
@@ -160,6 +177,7 @@ const CompanyInformationForm = ({
                 options={countryOptions}
                 register={register('country')}
                 defaultValue={defaultValues.country}
+                error={errors.country?.message}
               />
             </div>
 
@@ -173,6 +191,7 @@ const CompanyInformationForm = ({
                 placeholder='€'
                 register={register('netTurnover')}
                 defaultValue={defaultValues.netTurnover}
+                error={errors.netTurnover?.message}
               />
 
               <FormInput
@@ -182,6 +201,7 @@ const CompanyInformationForm = ({
                 placeholder='€'
                 register={register('assetsValue')}
                 defaultValue={defaultValues.assetsValue}
+                error={errors.assetsValue?.message}
               />
             </div>
 

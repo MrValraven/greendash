@@ -175,3 +175,8 @@
   font-family: 'Inter', 'Public Sans', sans-serif;
   font-size: 14px;
 }
+
+.company-info-form .form-input-container .error {
+  font-size: 12px;
+  color: #d9304c;
+}

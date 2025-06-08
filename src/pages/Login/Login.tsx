@@ -62,7 +62,7 @@ const Login = () => {
             <FormInput
               id='password'
               label='Password'
-              type='text'
+              type='password'
               register={register('password')}
               placeholder='Enter your password'
               error={errors.password?.message}
