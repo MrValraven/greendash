@@ -12,6 +12,7 @@ import CompanyInformationForm from './components/CompanyInformationForm/CompanyI
 import EmailConfirmationPage from './components/EmailConfirmationPage/EmailConfirmationPage.tsx';
 
 import './Register.css';
+import baseURL from '../../api/api.ts';
 
 const Register = () => {
   const [activeStep, setActiveStep] = useState(1);
@@ -23,10 +24,7 @@ const Register = () => {
     try {
       const apiData = { email: data.email, password: data.password };
 
-      const response = await axios.post(
-        'https://http://localhost:3000/api/v1/auth/users/register',
-        apiData,
-      );
+      const response = await axios.post(`${baseURL}/auth/users/register`, apiData);
 
       console.log('Submitting registration data to API:', response.data);
       return true;

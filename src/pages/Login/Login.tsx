@@ -10,6 +10,8 @@ import twitterIcon from './icons/twitter-icon.svg';
 import githubIcon from './icons/github-icon.svg';
 import googleIcon from './icons/google-icon.svg';
 import './Login.css';
+import axios from 'axios';
+import baseURL from '../../api/api.ts';
 
 const Login = () => {
   const {
@@ -23,6 +25,13 @@ const Login = () => {
   const onSubmit: SubmitHandler<LoginFormSchema> = async (data) => {
     try {
       console.log('Form data:', data);
+      const response = await axios.post(`${baseURL}/auth/users/login`, data);
+
+      if (response.status === 200) {
+        window.location.href = '/report/';
+      } else {
+        console.error('Login failed:', response.data);
+      }
     } catch (error) {
       console.error('Login error:', error);
     }
