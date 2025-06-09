@@ -30,6 +30,9 @@ const App: React.FC = () => {
           }
         >
           <Route index element={<Home />} />
+        </Route>
+
+        <Route>
           <Route path='login' element={<Login />} />
           <Route path='reset-password' element={<ResetPassword />} />
           <Route path='register' element={<Register />} />

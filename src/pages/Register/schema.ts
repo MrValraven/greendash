@@ -15,7 +15,10 @@ export const accountSchema = z
 export const companySchema = z.object({
   companyName: z.string().min(2, 'Company name is required'),
   businessSector: z.string().min(1, 'Business sector is required'),
-  companyNIF: z.string().min(9, 'NIF must be at least 9 characters'),
+  companyNIF: z
+    .string()
+    .min(9, 'NIF must be at least 9 characters')
+    .max(9, 'NIF must be at most 9 characters'),
   dateOfEstablishment: z.string().min(1, 'Date of establishment is required'),
   contactNumber: z.string().min(1, 'Contact number is required'),
   pincode: z.string().min(1, 'Postal code is required'),
