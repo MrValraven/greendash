@@ -11,6 +11,7 @@ type SelectFieldProps = {
   placeholder?: string;
   options?: Option[];
   error?: any;
+  onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 };
 
 const SelectField = ({ id, register, placeholder, options, error }: SelectFieldProps) => {

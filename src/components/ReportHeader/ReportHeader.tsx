@@ -16,10 +16,17 @@ const ReportHeader = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  const handleLogout = () => {
+    // Handle logout logic here, e.g., clear user session, redirect to login page
+    console.log('User logged out');
+    // Redirect to login page or home page
+    window.location.href = '/login';
+  };
+
   return (
     <header className='report-header'>
       <div className='report-header-container'>
-        <Link to='/'>
+        <Link to='/report'>
           <GreendashLogo />
         </Link>
 
@@ -52,9 +59,13 @@ const ReportHeader = () => {
                     <img src={SettingsIcon} />
                     <div>Settings</div>
                   </Link>
+                  <Link to='/report' className='dropdown-item'>
+                    <img src={SettingsIcon} />
+                    <div>Report Builder</div>
+                  </Link>
                 </div>
                 <div className='dropdown-footer'>
-                  <Button className='logout-button'>
+                  <Button onClick={handleLogout} className='logout-button'>
                     <div>Logout</div>
                     <img src={LogoutIcon} />
                   </Button>

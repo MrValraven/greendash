@@ -6,11 +6,12 @@ import { reportFormSchema, type ReportFormData } from './schema';
 import Button from '@components/Button/Button.tsx';
 import FormInput from '../components/FormInput.tsx';
 import './ReportBuilder.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const ReportBuilder = () => {
   const navigate = useNavigate();
   const { setReportData } = useReportContext();
+  const [reportBasis, setReportBasis] = useState('');
 
   const [logoPreview, setLogoPreview] = useState<string | null>(null);
 
@@ -31,6 +32,8 @@ const ReportBuilder = () => {
   } = useForm<ReportFormData>({
     resolver: zodResolver(reportFormSchema),
   });
+
+  console.log(reportBasis);
 
   const onSubmit: SubmitHandler<ReportFormData> = async (data) => {
     try {
@@ -64,6 +67,10 @@ const ReportBuilder = () => {
     { value: 'individual', label: 'Individual' },
     { value: 'consolidated', label: 'Consolidated' },
   ];
+
+  useEffect(() => {
+    console.log('Report Basis changed:', reportBasis);
+  }, [reportBasis]);
 
   return (
     <div className='report-form-container'>
@@ -137,6 +144,7 @@ const ReportBuilder = () => {
           placeholder='Consolidated/Individual'
           options={basisOptions}
           error={errors.basis?.message}
+          onChange={(e) => setReportBasis(e.target.value)}
         />
 
         <FormInput
