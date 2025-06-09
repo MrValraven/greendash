@@ -1,0 +1,51 @@
+.register-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button.register-previous-button {
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  display: flex;
+  gap: 5px;
+}
+
+/* inactive previous button */
+.button.register-previous-button.first-step {
+  background-color: rgba(128, 131, 144, 0.08);
+  color: rgba(47, 43, 61, 0.3);
+}
+
+.button.register-previous-button.first-step:hover {
+  background-color: rgba(128, 131, 144, 0.16);
+}
+
+.button.register-previous-button img.inactive-icon {
+  opacity: 0.4;
+}
+
+/* active previous button */
+.button.register-previous-button.active-step {
+  background-color: rgba(128, 131, 144, 0.16);
+  color: rgba(47, 43, 61, 0.6);
+}
+
+.button.register-previous-button.active-step:hover {
+  background-color: rgba(128, 131, 144, 0.3);
+}
+
+.button.register-previous-button img.active-icon {
+  opacity: 0.9;
+}
+
+.button.register-next-button {
+  font-size: 14px;
+  border-radius: 6px;
+  padding: 10px 20px;
+  display: flex;
+  gap: 5px;
+  box-shadow: 0 2px 10px rgba(47, 43, 61, 0.1);
+}

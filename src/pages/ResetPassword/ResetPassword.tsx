@@ -26,7 +26,7 @@ const ResetPassword = () => {
       <form onSubmit={handleSubmit(onSubmit)} className='reset-password-form'>
         <h2>Reset Password</h2>
 
-        <div className='reset-password-form-group'>
+        <div className='form-group'>
           <label htmlFor='password'>New Password</label>
           <input
             id='password'
@@ -37,7 +37,7 @@ const ResetPassword = () => {
           {errors.password && <span className='error'>{errors.password.message}</span>}
         </div>
 
-        <div className='reset-password-form-group'>
+        <div className='form-group'>
           <label htmlFor='confirmPassword'>Confirm Password</label>
           <input
             id='confirmPassword'
@@ -46,11 +46,11 @@ const ResetPassword = () => {
             placeholder='Confirm your new password'
           />
           {errors.confirmPassword && (
-            <span className='reset-password-error'>{errors.confirmPassword.message}</span>
+            <span className='error'>{errors.confirmPassword.message}</span>
           )}
         </div>
 
-        <Button type='submit' disabled={isSubmitting} className='reset-password-button'>
+        <Button type='submit' disabled={isSubmitting}>
           {isSubmitting ? 'Resetting...' : 'Reset Password'}
         </Button>
       </form>

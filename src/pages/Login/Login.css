@@ -1,60 +1,285 @@
-.login-container {
+.login-page {
+  height: 100vh;
+  background-color: #f8f7fa;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 2rem;
-  background-color: #f5f5f5;
 }
 
-.login-form {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 100%;
+.login-container-wrapper {
+  position: relative;
   max-width: 400px;
 }
 
-.login-form h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #333;
+.login-bg-green-container-top,
+.login-bg-green-container-bottom {
+  position: absolute;
+  background-color: #399c17;
+  border-radius: 8px;
+  z-index: 1;
 }
 
-.login-form-group {
-  margin-bottom: 1.5rem;
+.login-bg-green-container-top {
+  width: 200px;
+  height: 200px;
+  top: -25px;
+  left: -40px;
 }
 
-.login-form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #555;
+.login-bg-green-container-bottom {
+  width: 130px;
+  height: 130px;
+  top: 510px;
+  left: 300px;
+}
+
+.login-bg-transp-container-top,
+.login-bg-transp-container-bottom {
+  position: absolute;
+  background-color: none;
+  border-radius: 20px;
+  z-index: 0;
+}
+
+.login-bg-transp-container-top {
+  width: 130px;
+  height: 130px;
+  top: -55px;
+  left: 50px;
+  border: 1px solid rgba(76, 0, 255, 0.1);
+}
+
+.login-bg-transp-container-bottom {
+  width: 180px;
+  height: 180px;
+  top: 485px;
+  left: 275px;
+  border: 2px dashed rgba(76, 0, 255, 0.1);
+}
+
+.login-container {
+  background-color: white;
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 2;
+  position: relative;
+}
+
+/* greenDash logo */
+.login-greendash-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-greendash-logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.login-greendash-logo img {
+  width: 30px;
+}
+
+/* login header */
+
+.login-header h2 {
+  font-size: 24px;
   font-weight: 500;
+  color: #2f2b3d;
+  opacity: 0.9;
 }
 
-.login-form-group input {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ddd;
+.login-header p {
+  font-size: 12px;
+  color: #2f2b3d;
+  opacity: 0.7;
+  width: 85%;
+}
+
+/* login form */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-form .form-input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form .form-input-container label {
+  font-size: 12px;
+  color: rgb(47, 43, 61);
+  opacity: 0.9;
+}
+
+.login-form .form-input-container input {
+  padding: 8px 15px;
+  border: 1px solid rgba(47, 43, 61, 0.22);
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: 14px;
+  color: #2f2b3d;
+  background-color: white;
 }
 
-.login-form-group input:focus {
+.login-form .form-input-container input:focus {
+  border-color: #399c17;
   outline: none;
-  border-color: #4caf50;
-  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
 }
 
-.login-error {
+.login-form .form-input-container input::placeholder {
+  color: rgba(47, 43, 61, 0.4);
+}
+
+.login-form-options {
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* custom checkbox for remember me */
+.remember-me-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.remember-me-container input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.checkbox-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 16px;
+  width: 16px;
+  border-radius: 3px;
+  border: 1px solid rgba(47, 43, 61, 0.22);
+  background-color: white;
+  cursor: pointer;
+}
+
+.remember-me-text {
+  font-size: 12px;
+  color: rgba(47, 43, 61, 0.9);
+  margin-left: 24px;
+}
+
+.remember-me-container input:checked ~ .checkbox-icon {
+  background-color: #399c17;
+  border-color: #399c17;
+}
+
+.checkbox-icon:after {
+  content: '';
+  position: absolute;
+  display: none;
+  left: 5px;
+  top: 2px;
+  width: 3px;
+  height: 6px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.remember-me-container input:checked ~ .checkbox-icon:after {
   display: block;
-  color: #d32f2f;
-  font-size: 0.875rem;
-  margin-top: 0.5rem;
 }
 
+.checkbox-icon:hover {
+  border-color: #399c17;
+}
+
+/* Forgot password */
+.forgot-password-link a {
+  color: #399c17;
+  text-decoration: none;
+}
+
+.forgot-password-link a:hover {
+  text-decoration: underline;
+}
+
+/* login button */
 .login-button {
-  width: 100%;
-  margin-top: 1rem;
+  font-size: 14px;
+  padding: 10px;
+}
+
+/* register link */
+
+.register-link-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.register-link-container p {
+  font-size: 12px;
+  color: #2f2b3d;
+  opacity: 0.7;
+  text-align: center;
+}
+
+.register-link-container a {
+  font-size: 12px;
+  color: #399c17;
+}
+
+.register-link-container a:hover {
+  text-decoration: underline;
+}
+
+/* social media divider */
+.login-social-media-divider {
+  position: relative;
+  text-align: center;
+}
+
+.login-social-media-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: rgba(47, 43, 61, 0.1);
+}
+
+.login-social-media-divider span {
+  position: relative;
+  background-color: white;
+  padding: 0 10px;
+  font-size: 14px;
+  color: rgba(47, 43, 61, 0.7);
+}
+
+.login-social-media-options {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.login-social-media-options img {
+  cursor: pointer;
+}
+
+.login-form .form-input-container .error {
+  font-size: 12px;
+  color: #d9304c;
 }
