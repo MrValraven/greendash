@@ -1,5 +1,4 @@
-import { View, Text, Svg, Polygon } from '@react-pdf/renderer';
-import React from 'react';
+import { View, Text } from '@react-pdf/renderer';
 import { globalStyles } from './styles/globalStyles';
 
 const BarrasDoFundo = ({ pageNumber }: any) => {

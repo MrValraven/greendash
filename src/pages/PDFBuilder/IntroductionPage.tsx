@@ -13,7 +13,7 @@ interface IntroductionPageProps {
   logoUrl: string;
 }
 
-const IntroductionPage = ({ ano_empresa, nome_empresa, logoUrl }: IntroductionPageProps) => (
+const IntroductionPage = ({ ano_empresa, logoUrl }: IntroductionPageProps) => (
   <View
     style={{
       height: '100%',
