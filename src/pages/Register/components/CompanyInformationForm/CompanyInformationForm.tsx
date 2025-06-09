@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { companySchema, type CompanyFormData } from '../../schema';
+import { companySchema, type CompanyFormData } from '../../schema.ts';
 import RegistrationSteps from '../RegistrationSteps/RegistrationSteps';
 import StepButtons from '../StepButtons/StepButtons';
 import { CompanyInformationFormProps } from './types';

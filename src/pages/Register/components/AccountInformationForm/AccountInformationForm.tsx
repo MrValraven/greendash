@@ -1,10 +1,10 @@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { accountSchema, type AccountFormData } from '../../schema';
-import { AccountInformationFormProps } from './types';
-import RegistrationSteps from '../RegistrationSteps/RegistrationSteps';
-import StepButtons from '../StepButtons/StepButtons';
-import FormInput from '@components/FormInput/FormInput';
+import { accountSchema, type AccountFormData } from '../../schema.ts';
+import { AccountInformationFormProps } from './types.ts';
+import RegistrationSteps from '../RegistrationSteps/RegistrationSteps.tsx';
+import StepButtons from '../StepButtons/StepButtons.tsx';
+import FormInput from '@components/FormInput/FormInput.tsx';
 
 import './AccountInformation.css';
 
