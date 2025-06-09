@@ -1,6 +1,6 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { loginSchema, type LoginFormSchema } from './schema.tsx';
+import { loginSchema, type LoginFormSchema } from './schema.ts';
 import Button from '@components/Button/Button.tsx';
 import FormInput from '@components/FormInput/FormInput.tsx';
 import GreendashLogo from '@components/GreendashLogo/GreendashLogo.tsx';

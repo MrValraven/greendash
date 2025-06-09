@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { SubmitHandler } from 'react-hook-form';
-import { AccountFormData, CompanyFormData } from './schema.tsx';
-import { RegistrationData } from './types.tsx';
+import { AccountFormData, CompanyFormData } from './schema.ts';
+import { RegistrationData } from './types.ts';
 
 import GreendashLogo from '@components/GreendashLogo/GreendashLogo.tsx';
 import GreendashLogoImg from '../../../public/greendashLogo.png';
