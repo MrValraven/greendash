@@ -22,18 +22,18 @@
   color: #333;
 }
 
-.form-group {
+.register-form-group {
   margin-bottom: 1.5rem;
 }
 
-.form-group label {
+.register-form-group label {
   display: block;
   margin-bottom: 0.5rem;
   color: #555;
   font-weight: 500;
 }
 
-.form-group input {
+.register-form-group input {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid #ddd;
@@ -41,20 +41,20 @@
   font-size: 1rem;
 }
 
-.form-group input:focus {
+.register-form-group input:focus {
   outline: none;
   border-color: #4caf50;
   box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
 }
 
-.error {
+.register-error {
   display: block;
   color: #d32f2f;
   font-size: 0.875rem;
   margin-top: 0.5rem;
 }
 
-button[type='submit'] {
+.register-button {
   width: 100%;
   margin-top: 1rem;
 }
