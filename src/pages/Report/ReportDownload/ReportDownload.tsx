@@ -3,7 +3,7 @@ import './ReportDownload.css';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import SustainabilityReport from '../../PDFBuilder/SustainabilityReport.tsx';
 import { useEffect, useState } from 'react';
-import baseURL from '@api/api.ts';
+import baseURL from '../../../api/api.ts';
 
 const ReportDownload = () => {
   const { reportData } = useReportContext();
