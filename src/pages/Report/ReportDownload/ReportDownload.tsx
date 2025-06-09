@@ -3,6 +3,7 @@ import './ReportDownload.css';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import SustainabilityReport from '../../PDFBuilder/SustainabilityReport.tsx';
 import { useEffect, useState } from 'react';
+import baseURL from '../../../api/api.ts';
 
 const ReportDownload = () => {
   const { reportData } = useReportContext();
@@ -24,7 +25,7 @@ const ReportDownload = () => {
   useEffect(() => {
     const getDataFromAI = async (text: string, chapterName: string) => {
       try {
-        const response = await fetch('http://localhost:3000/api/v1/auth/ai/build', {
+        const response = await fetch(`${baseURL}/auth/ai/build`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
