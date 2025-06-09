@@ -75,7 +75,8 @@ export const globalStyles = StyleSheet.create({
   },
   barraFundo: {
     width: '100%',
-    height: 20,
+    height: 10,
     backgroundColor: '#023d3c',
+    border: '1px solid #023d3c',
   },
 });

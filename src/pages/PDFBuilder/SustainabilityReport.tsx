@@ -7,7 +7,7 @@ import BasicModule from './BasicModule';
 
 const styles = StyleSheet.create({
   page: {
-    padding: 40,
+    paddingTop: 40,
     fontSize: 12,
     fontFamily: 'Helvetica',
   },

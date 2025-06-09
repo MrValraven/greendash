@@ -48,14 +48,14 @@ const ReportDownload = () => {
     };
 
     const getData = async () => {
-      if (reportData && reportData.sustainabilityPractices) {
+      if (reportData && reportData.sustainabilityPractices && !transformedText) {
         const sustainablePractices = await getDataFromAI(
           `These practices encompass: ${reportData.sustainabilityPractices}. You should start the phrase with "These practices encompass: "`,
           'Sustainable Practices',
         );
         setTransformedText(sustainablePractices);
       }
-      if (reportData && reportData.subsidiaries) {
+      if (reportData && reportData.subsidiaries && !transformedSub) {
         const subsidiaries = await getDataFromAI(
           reportData.subsidiaries,
           'Company subsidiaries in the report. Please do not make up any data, just make it adjusted to be human readable and start by saying "Our company has the following subsidiaries: "',
@@ -99,12 +99,20 @@ const ReportDownload = () => {
         </div>
         <div className='summary-item'>
           <span className='label'>Sustainability practices:</span>
-          <span className='value'>{transformedText || reportData.sustainabilityPractices}</span>
+          {!transformedText ? (
+            <span>Loading transformed Data from AI Service...</span>
+          ) : (
+            <span className='value'>{transformedText || reportData.sustainabilityPractices}</span>
+          )}
         </div>
 
         <div className='summary-item'>
           <span className='label'>Subsidiaries:</span>
-          <span className='value'>{transformedSub || reportData.subsidiaries}</span>
+          {!transformedSub ? (
+            <span>Loading transformed Data from AI Service...</span>
+          ) : (
+            <span className='value'>{transformedSub || reportData.subsidiaries}</span>
+          )}
         </div>
       </div>
 
@@ -125,7 +133,9 @@ const ReportDownload = () => {
           }
           fileName='sustainability-report.pdf'
         >
-          {({ loading }) => (loading ? 'Generating PDF...' : 'Download PDF')}
+          {({ loading }) =>
+            loading && !transformedSub && !transformedText ? 'Generating PDF...' : 'Download PDF'
+          }
         </PDFDownloadLink>
       </div>
     </div>

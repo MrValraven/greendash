@@ -3,7 +3,7 @@ import { globalStyles } from './styles/globalStyles';
 import BarrasDoFundo from './BarrasDoFundo';
 
 const styles = StyleSheet.create({
-  section: { marginBottom: 20, padding: 20 },
+  section: { marginBottom: 20, padding: 60, paddingTop: 20 },
   paragraph: { marginBottom: 12, lineHeight: 1.5 },
 });
 
