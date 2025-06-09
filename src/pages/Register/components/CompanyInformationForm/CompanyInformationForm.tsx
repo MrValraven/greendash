@@ -3,7 +3,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { companySchema, type CompanyFormData } from '../../schema.ts';
 import RegistrationSteps from '../RegistrationSteps/RegistrationSteps';
 import StepButtons from '../StepButtons/StepButtons';
-import { CompanyInformationFormProps } from './types';
+import { CompanyInformationFormProps } from './types.ts';
 import FormInput from '@components/FormInput/FormInput';
 
 import registrationImage from '@assets/register-illustration.svg';
