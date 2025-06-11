@@ -3,6 +3,7 @@ import Home from '@pages/Home/Home.tsx';
 import Login from '@pages/Login/Login.tsx';
 import Register from '@pages/Register/Register.tsx';
 import ResetPassword from '@pages/ResetPassword/ResetPassword';
+import ForgotPassword from '@pages/ForgotPassword/ForgotPassword';
 import Header from '@components/Header/Header.tsx';
 import Footer from '@components/Footer/Footer.tsx';
 
@@ -35,6 +36,7 @@ const App: React.FC = () => {
         <Route>
           <Route path='login' element={<Login />} />
           <Route path='reset-password' element={<ResetPassword />} />
+          <Route path='forgot-password' element={<ForgotPassword />} />
           <Route path='register' element={<Register />} />
         </Route>
 
