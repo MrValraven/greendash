@@ -1,0 +1,77 @@
+.auth-page {
+  height: 100vh;
+  background-color: #f8f7fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-container-wrapper {
+  position: relative; /* Creates a stacking context */
+  z-index: 0; /* Ensures it's not behind auth-page */
+}
+
+.auth-container {
+  width: 400px;
+  background-color: white;
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.auth-bg-container-top,
+.auth-bg-container-bottom {
+  position: absolute;
+  border-radius: 8px;
+  background-color: rgba(74, 155, 47, 0.08);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.auth-bg-container-top {
+  width: 155px;
+  height: 155px;
+  top: -70px;
+  left: -35px;
+}
+
+.auth-bg-container-bottom {
+  width: 110px;
+  height: 110px;
+  bottom: -80px;
+  right: -35px;
+}
+
+.auth-greendash-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-greendash-logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.auth-greendash-logo img {
+  width: 30px;
+}
+
+.auth-header h2 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #2f2b3d;
+  opacity: 0.9;
+}
+
+.auth-header p {
+  font-size: 12px;
+  color: #2f2b3d;
+  opacity: 0.7;
+  width: 85%;
+}

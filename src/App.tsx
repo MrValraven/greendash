@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
-import Home from '@pages/Home/Home.tsx';
-import Login from '@pages/Login/Login.tsx';
-import Register from '@pages/Register/Register.tsx';
-import ResetPassword from '@pages/ResetPassword/ResetPassword';
-import ForgotPassword from '@pages/ForgotPassword/ForgotPassword';
 import Header from '@components/Header/Header.tsx';
 import Footer from '@components/Footer/Footer.tsx';
+import Home from '@pages/Home/Home.tsx';
+
+import Login from '@pages/AuthPages/Login/Login';
+import Register from '@pages/AuthPages/Register/Register.tsx';
+import ResetPassword from '@pages/AuthPages/ResetPassword/ResetPassword';
+import ForgotPassword from '@pages/AuthPages/ForgotPassword/ForgotPassword.tsx';
 
 import ReportLayout from '@pages/Report/ReportLayout/ReportLayout';
 import Report from '@pages/Report/Report';
