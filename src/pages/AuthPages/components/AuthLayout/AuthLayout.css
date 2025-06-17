@@ -14,7 +14,7 @@
 .auth-container {
   width: 400px;
   background-color: white;
-  padding: 50px;
+  padding: 35px;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -63,7 +63,7 @@
 }
 
 .auth-header h2 {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 500;
   color: #2f2b3d;
   opacity: 0.9;

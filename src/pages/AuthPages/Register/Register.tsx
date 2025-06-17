@@ -5,14 +5,14 @@ import { AccountFormData, CompanyFormData } from './schema.ts';
 import { RegistrationData } from './types.ts';
 
 import GreendashLogo from '@components/GreendashLogo/GreendashLogo.tsx';
-import GreendashLogoImg from '../../../public/greendashLogo.png';
+import GreendashLogoImg from '../../../../public/greendashLogo.png';
 
 import AccountInformationForm from './components/AccountInformationForm/AccountInformationForm.tsx';
 import CompanyInformationForm from './components/CompanyInformationForm/CompanyInformationForm.tsx';
 import EmailConfirmationPage from './components/EmailConfirmationPage/EmailConfirmationPage.tsx';
 
 import './Register.css';
-import baseURL from '@api/api.ts';
+import baseURL from '../../../api/api.ts';
 
 const Register = () => {
   const [activeStep, setActiveStep] = useState(1);
