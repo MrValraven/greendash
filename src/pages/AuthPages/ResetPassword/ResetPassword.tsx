@@ -15,7 +15,7 @@ import axios from 'axios';
 import baseURL from '../../../api/api.ts';
 
 const ResetPassword = () => {
-  const [isPasswordReset, setIsPasswordReset] = useState(true);
+  const [isPasswordReset, setIsPasswordReset] = useState(false);
   const {
     register,
     handleSubmit,

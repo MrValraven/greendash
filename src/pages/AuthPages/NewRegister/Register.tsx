@@ -13,7 +13,7 @@ import RegistrationSuccess from './components/RegistrationSuccess/RegistrationSu
 import './Register.css';
 
 const Register = () => {
-  const [activeStep, setActiveStep] = useState(3);
+  const [activeStep, setActiveStep] = useState(1);
   const [registrationData, setRegistrationData] = useState<RegistrationData>({});
 
   const handleCompanySubmit: SubmitHandler<Partial<CompanyFormData>> = async (data) => {

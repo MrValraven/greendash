@@ -14,7 +14,7 @@ import axios from 'axios';
 import baseURL from '../../../api/api.ts';
 
 const ForgotPassword = () => {
-  const [isEmailSent, setIsEmailSent] = useState(true);
+  const [isEmailSent, setIsEmailSent] = useState(false);
   const [userEmail, setUserEmail] = useState('');
   const {
     register,
