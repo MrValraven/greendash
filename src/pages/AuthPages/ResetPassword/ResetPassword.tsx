@@ -15,7 +15,7 @@ import axios from 'axios';
 import baseURL from '../../../api/api.ts';
 
 const ResetPassword = () => {
-  const [isPasswordReset, setIsPasswordReset] = useState(false);
+  const [isPasswordReset, setIsPasswordReset] = useState(true);
   const {
     register,
     handleSubmit,
@@ -36,7 +36,7 @@ const ResetPassword = () => {
         console.error('Failed Resetting Password:', response.data);
       }
     } catch (error) {
-      console.error('Login error:', error);
+      console.error('Reset password error:', error);
     }
   };
 
