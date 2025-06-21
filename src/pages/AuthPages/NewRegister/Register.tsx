@@ -69,7 +69,7 @@ const Register = () => {
             onSubmit={handleCompanySubmit}
             onPrevious={handlePreviousStep}
             activeStep={activeStep}
-            isReviewMode={false}
+            defaultValues={registrationData}
           />
         )}
 

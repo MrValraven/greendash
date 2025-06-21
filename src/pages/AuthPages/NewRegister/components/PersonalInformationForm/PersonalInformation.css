@@ -27,15 +27,16 @@
   gap: 20px;
 }
 
-.name-input-container,
-.mobile-position-input-container {
-  display: flex;
+.form-input-groups-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
-.email-input-container {
+.form-input-group {
   display: flex;
-  justify-content: start;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .personal-info-form .form-input-container {

@@ -8,6 +8,7 @@ import { CompanyInformationFormProps } from './types.ts';
 import InputField from '@components/FieldComponents/InputField/InputField.tsx';
 import SelectField from '@components/FieldComponents/SelectField/SelectField.tsx';
 import Label from '@components/FieldComponents/Label/Label.tsx';
+import ErrorMessage from '@components/FieldComponents/ErrorMessage/ErrorMessage.tsx';
 
 import './CompanyInformationFrom.css';
 
@@ -69,6 +70,7 @@ const CompanyInformationForm = ({
               register={register('companyName')}
               error={errors.companyName?.message}
             />
+            <ErrorMessage error={errors.companyName?.message} />
           </div>
 
           <div className='form-input-container'>
@@ -80,6 +82,7 @@ const CompanyInformationForm = ({
               register={register('businessSector')}
               error={errors.businessSector?.message}
             />
+            <ErrorMessage error={errors.businessSector?.message} />
           </div>
 
           <div className='company-input-group'>
@@ -92,6 +95,7 @@ const CompanyInformationForm = ({
                 placeholder='xxxxxx'
                 error={errors.taxId?.message}
               />
+              <ErrorMessage error={errors.taxId?.message} />
             </div>
 
             <div className='form-input-container'>
@@ -103,6 +107,7 @@ const CompanyInformationForm = ({
                 placeholder='xxxxxx'
                 error={errors.companySize?.message}
               />
+              <ErrorMessage error={errors.companySize?.message} />
             </div>
           </div>
 
@@ -116,6 +121,7 @@ const CompanyInformationForm = ({
                 placeholder='202 555 0111'
                 error={errors.contactNumber?.message}
               />
+              <ErrorMessage error={errors.contactNumber?.message} />
             </div>
 
             <div className='form-input-container'>
@@ -127,6 +133,7 @@ const CompanyInformationForm = ({
                 placeholder='Postal Code'
                 error={errors.companyPincode?.message}
               />
+              <ErrorMessage error={errors.companyPincode?.message} />
             </div>
           </div>
 
@@ -139,6 +146,7 @@ const CompanyInformationForm = ({
               placeholder='Address'
               error={errors.companyAddress?.message}
             />
+            <ErrorMessage error={errors.companyAddress?.message} />
           </div>
 
           <div className='company-input-group'>
@@ -151,6 +159,7 @@ const CompanyInformationForm = ({
                 placeholder='City'
                 error={errors.city?.message}
               />
+              <ErrorMessage error={errors.city?.message} />
             </div>
 
             <div className='form-input-container'>
@@ -162,6 +171,7 @@ const CompanyInformationForm = ({
                 register={register('country')}
                 error={errors.country?.message}
               />
+              <ErrorMessage error={errors.country?.message} />
             </div>
           </div>
 
@@ -174,6 +184,7 @@ const CompanyInformationForm = ({
               placeholder='www.mycompany.com'
               error={errors.companyWebsite?.message}
             />
+            <ErrorMessage error={errors.companyWebsite?.message} />
           </div>
 
           <StepButtons onPrevious={handlePrevious} isFirstStep={false} />

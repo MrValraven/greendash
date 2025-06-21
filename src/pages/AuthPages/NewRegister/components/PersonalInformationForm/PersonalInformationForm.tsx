@@ -40,64 +40,64 @@ const PersonalInformationForm = ({
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className='personal-info-form'>
-          <div className='name-input-container'>
-            <div className='form-input-container'>
-              <Label htmlFor='firstName' label='First Name' />
-              <InputField
-                id='firstName'
-                type='text'
-                register={register('firstName')}
-                placeholder='John'
-                error={errors.firstName?.message}
-              />
+          <div className='form-input-groups-container'>
+            <div className='form-input-group'>
+              <div className='form-input-container'>
+                <Label htmlFor='firstName' label='First Name' />
+                <InputField
+                  id='firstName'
+                  type='text'
+                  register={register('firstName')}
+                  placeholder='John'
+                  error={errors.firstName?.message}
+                />
+              </div>
+
+              <div className='form-input-container'>
+                <Label htmlFor='mobileNumber' label='Mobile' />
+                <InputField
+                  id='mobileNumber'
+                  type='text'
+                  register={register('mobileNumber')}
+                  placeholder='205 555 0111'
+                  error={errors.mobileNumber?.message}
+                />
+              </div>
+
+              <div className='form-input-container'>
+                <Label htmlFor='email' label='Email' />
+                <InputField
+                  id='email'
+                  type='text'
+                  register={register('email')}
+                  placeholder='Enter your work email'
+                  error={errors.email?.message}
+                />
+              </div>
             </div>
 
-            <div className='form-input-container'>
-              <Label htmlFor='lastName' label='Last Name' />
-              <InputField
-                id='lastName'
-                type='text'
-                register={register('lastName')}
-                placeholder='Doe'
-                error={errors.lastName?.message}
-              />
-            </div>
-          </div>
+            <div className='form-input-group'>
+              <div className='form-input-container'>
+                <Label htmlFor='lastName' label='Last Name' />
+                <InputField
+                  id='lastName'
+                  type='text'
+                  register={register('lastName')}
+                  placeholder='Doe'
+                  error={errors.lastName?.message}
+                />
+              </div>
 
-          <div className='mobile-position-input-container'>
-            <div className='form-input-container'>
-              <Label htmlFor='mobileNumber' label='Mobile' />
-              <InputField
-                id='mobileNumber'
-                type='text'
-                register={register('mobileNumber')}
-                placeholder='205 555 0111'
-                error={errors.mobileNumber?.message}
-              />
-            </div>
-
-            <div className='form-input-container'>
-              <Label htmlFor='positionInCompany' label='Position in Company' />
-              <InputField
-                id='positionInCompany'
-                type='text'
-                register={register('positionInCompany')}
-                placeholder='Confirm your password'
-                error={errors.positionInCompany?.message}
-              />
-            </div>
-          </div>
-
-          <div className='email-input-container'>
-            <div className='form-input-container'>
-              <Label htmlFor='email' label='Email' />
-              <InputField
-                id='email'
-                type='text'
-                register={register('email')}
-                placeholder='Enter your work email'
-                error={errors.email?.message}
-              />
+              <div className='form-input-container'>
+                <Label htmlFor='positionInCompany' label='Position in Company' />
+                <InputField
+                  id='positionInCompany'
+                  type='text'
+                  register={register('positionInCompany')}
+                  placeholder='Position in Company'
+                  error={errors.positionInCompany?.message}
+                />
+              </div>
             </div>
           </div>
 
