@@ -1,5 +1,5 @@
 import GreendashLogo from '@components/GreendashLogo/GreendashLogo';
-import GreendashLogoImg from '../../../../../public/greendashLogo.png';
+import greendashLogoImg from '../../../../../public/greendashLogo.png';
 import './AuthLayout.css';
 
 interface AuthLayoutProps {
@@ -18,7 +18,7 @@ const AuthLayout = ({ children, title, description }: AuthLayoutProps) => {
         <div className='auth-container'>
           <div className='auth-greendash-logo-container'>
             <div className='auth-greendash-logo'>
-              <img src={GreendashLogoImg} alt='GreenDash Logo' />
+              <img src={greendashLogoImg} alt='GreenDash Logo' />
               <GreendashLogo />
             </div>
           </div>
