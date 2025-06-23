@@ -36,6 +36,7 @@
 }
 
 .sidebar-label {
+  flex: 1;
   margin-left: 16px;
   font-size: 15px;
   color: #222;
