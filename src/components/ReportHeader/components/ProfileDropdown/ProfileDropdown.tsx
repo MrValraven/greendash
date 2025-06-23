@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Button from '@components/Button/Button';
+import Button from '@components/Button/Button.tsx';
 
 import avatarIcon from './icons/Avatar.svg';
 import profileIcon from './icons/ProfileIcon.svg';

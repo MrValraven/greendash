@@ -1,4 +1,4 @@
-import AuthLayout from '@pages/AuthPages/components/AuthLayout/AuthLayout';
+import AuthLayout from '@pages/AuthPages/components/AuthLayout/AuthLayout.tsx';
 import Button from '@components/Button/Button';
 
 import './RegistrationSuccess.css';

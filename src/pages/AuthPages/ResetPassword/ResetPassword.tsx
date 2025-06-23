@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { resetPasswordSchema, type ResetPasswordFormSchema } from './schema';
-import Button from '@components/Button/Button';
-import AuthLayout from '../components/AuthLayout/AuthLayout';
+import Button from '@components/Button/Button.tsx';
+import AuthLayout from '../components/AuthLayout/AuthLayout.tsx';
 
-import InputField from '@components/FieldComponents/InputField/InputField';
-import Label from '@components/FieldComponents/Label/Label';
+import InputField from '@components/FieldComponents/InputField/InputField.tsx';
+import Label from '@components/FieldComponents/Label/Label.tsx';
 
 import backArrowIcon from '@assets/chevron-left.svg';
 import './ResetPassword.css';

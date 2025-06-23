@@ -1,4 +1,4 @@
-import GreendashLogo from '@components/GreendashLogo/GreendashLogo';
+import GreendashLogo from '@components/GreendashLogo/GreendashLogo.tsx';
 import greendashLogoImg from '../../../../../public/greendashLogo.png';
 import './AuthLayout.css';
 

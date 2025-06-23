@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import ProfileDropdown from './components/ProfileDropdown/ProfileDropdown';
+import ProfileDropdown from './components/ProfileDropdown/ProfileDropdown.tsx';
 import NotificationDropdown from './components/NotificationDropdown/NotificationDropdown.tsx';
 import LanguageDropdown from './components/LanguageDropdown/LanguageDropdown.tsx';
 
