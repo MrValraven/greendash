@@ -10,4 +10,5 @@
   padding: 0;
   line-height: 1em;
   border-bottom: 3px solid var(--primaryColor);
+  white-space: nowrap;
 }

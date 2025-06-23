@@ -5,6 +5,7 @@
   align-items: center;
   flex: 1;
   width: 100%;
+  background-color: white;
 }
 
 .report-container h1 {
