@@ -1,0 +1,44 @@
+.register-page {
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.register-forms-container {
+  width: 100%;
+  height: 100%;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Register header */
+.register-header {
+  position: absolute;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.register-greendash-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 25px;
+}
+
+.register-greendash-logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.register-greendash-logo img {
+  width: 30px;
+}

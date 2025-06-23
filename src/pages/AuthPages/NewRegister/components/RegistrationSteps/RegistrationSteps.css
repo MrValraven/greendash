@@ -1,0 +1,60 @@
+.register-steps {
+  display: flex;
+  gap: 20px;
+}
+
+.register-step-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.register-step-graphic {
+  width: 35px;
+  height: 35px;
+  border-radius: 6px;
+  border: none;
+  background-color: rgba(47, 43, 61, 0.06);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+.register-step-graphic.active {
+  background-color: #399c17;
+  box-shadow: 0 2px 10px rgba(47, 43, 61, 0.1);
+}
+
+.register-step-graphic.completed {
+  background-color: rgba(74, 155, 47, 0.16);
+}
+
+.register-step-graphic img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+}
+
+.register-step-graphic img.hidden {
+  opacity: 0;
+}
+
+.register-step-info h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(47, 43, 61, 0.9);
+}
+
+.register-step-info p {
+  font-size: 12px;
+  color: rgba(47, 43, 61, 0.7);
+}
+
+.register-step-info.completed h3,
+.register-step-info.completed p {
+  color: rgba(47, 43, 61, 0.4);
+}
