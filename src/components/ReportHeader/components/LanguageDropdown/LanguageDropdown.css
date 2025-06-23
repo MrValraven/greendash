@@ -1,0 +1,33 @@
+.language-button {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-language-menu {
+  position: absolute;
+  background-color: white;
+  top: 95px;
+  right: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 170px;
+  z-index: 1000;
+  padding: 8px;
+}
+
+.dropdown-language-item {
+  padding: 8px 16px;
+  color: rgba(47, 43, 61, 0.898);
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.1s;
+}
+
+.dropdown-language-item:hover {
+  color: #5ebc3e;
+  background-color: rgba(74, 155, 47, 0.161);
+}
