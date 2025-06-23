@@ -64,7 +64,7 @@ const SidebarItem: React.FC<Props> = ({
               <img
                 src={arrowDropdownIcon}
                 alt='expand'
-                className={`dropdown-arrow`}
+                className='dropdown-arrow'
                 onClick={(e) => {
                   e.stopPropagation();
                   onToggle(item.label);
