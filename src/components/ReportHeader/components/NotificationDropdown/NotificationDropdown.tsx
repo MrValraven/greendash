@@ -1,4 +1,4 @@
-import Button from '@components/Button/Button';
+import Button from '@components/Button/Button.tsx';
 
 import notificationIcon from './icons/NotificationButton.svg';
 import mailIcon from './icons/mailIcon.svg';

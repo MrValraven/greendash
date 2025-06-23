@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '@components/Button/Button';
+import Button from '@components/Button/Button.tsx';
 import { StepButtonsProps } from './types.ts';
 import arrowLeftIcon from '../../icons/arrow-left-icon.svg';
 import arrowRightIcon from '../../icons/arrow-right-icon.svg';

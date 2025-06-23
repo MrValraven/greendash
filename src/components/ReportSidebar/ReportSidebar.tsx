@@ -1,12 +1,12 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import GreendashLogo from '@components/GreendashLogo/GreendashLogo';
+import GreendashLogo from '@components/GreendashLogo/GreendashLogo.tsx';
 import greendashLogoImg from '../../../public/greendashLogo.png';
 import collapseIcon from './icons/collapse-icon.svg';
 
-import SidebarSection from './components/SidebarSection/SidebarSection';
-import sidebarItems from './components/SidebarData/SidebarData';
+import SidebarSection from './components/SidebarSection/SidebarSection.tsx';
+import sidebarItems from './components/SidebarData/SidebarData.ts';
 import './ReportSidebar.css';
 
 const ReportSidebar = () => {
