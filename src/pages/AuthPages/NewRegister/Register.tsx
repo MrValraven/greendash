@@ -10,6 +10,9 @@ import PersonalInformationForm from './components/PersonalInformationForm/Person
 import CompanyInformationForm from './components/CompanyInformationForm/CompanyInformationForm.tsx';
 import RegistrationSuccess from './components/RegistrationSuccess/RegistrationSuccess.tsx';
 
+import axios from 'axios';
+import baseURL from '../../../api/api.ts';
+
 import './Register.css';
 
 const Register = () => {
@@ -34,7 +37,14 @@ const Register = () => {
         ...data,
       };
       setRegistrationData(finalData);
-      console.log('Registration complete with data:', finalData);
+
+      // temporary to make the register functional
+      const dataToSend = {
+        email: finalData.email,
+        password: finalData.password,
+      };
+
+      await axios.post(`${baseURL}/auth/users/register`, dataToSend);
 
       setActiveStep(3);
     } catch (error) {

@@ -98,6 +98,17 @@ const PersonalInformationForm = ({
                   error={errors.positionInCompany?.message}
                 />
               </div>
+
+              <div className='form-input-container'>
+                <Label htmlFor='password' label='Password' />
+                <InputField
+                  id='password'
+                  type='password'
+                  register={register('password')}
+                  placeholder='Enter your password'
+                  error={errors.password?.message}
+                />
+              </div>
             </div>
           </div>
 
