@@ -29,7 +29,9 @@ const SidebarSection: React.FC<Props> = ({
 }) => {
   return (
     <div className={`sidebar-section ${collapsed ? 'collapsed' : 'expanded'}`}>
-      {!collapsed && <div className='sidebar-section-title'>{section.section}</div>}
+      {!collapsed && section.section && (
+        <div className='sidebar-section-title'>{section.section}</div>
+      )}
       {section.items.map((item) => (
         <SidebarItem
           key={item.label}
