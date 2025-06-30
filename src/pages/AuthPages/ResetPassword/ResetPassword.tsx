@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { resetPasswordSchema, type ResetPasswordFormSchema } from './schema';
 import Button from '@components/Button/Button.tsx';
 import AuthLayout from '../components/AuthLayout/AuthLayout.tsx';
+import ToastNotification from '@components/ToastNotification/ToastNotification.tsx';
 
 import InputField from '@components/FieldComponents/InputField/InputField.tsx';
 import Label from '@components/FieldComponents/Label/Label.tsx';
@@ -15,6 +16,11 @@ import axios from 'axios';
 import baseURL from '../../../api/api.ts';
 
 const ResetPassword = () => {
+  const [toastNotification, setToastNotification] = useState<{
+    message: string;
+    type: 'success' | 'error' | 'info' | 'warning';
+    visible: boolean;
+  } | null>(null);
   const [isPasswordReset, setIsPasswordReset] = useState(false);
   const {
     register,
@@ -34,9 +40,66 @@ const ResetPassword = () => {
         setIsPasswordReset(true);
       } else {
         console.error('Failed Resetting Password:', response.data);
+        setToastNotification({
+          message: 'Failed to reset password. Please try again.',
+          type: 'error',
+          visible: true,
+        });
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Reset password error:', error);
+
+      if (error.response) {
+        switch (error.response.status) {
+          case 400:
+            setToastNotification({
+              message: 'Invalid request. Please check your input.',
+              type: 'error',
+              visible: true,
+            });
+            break;
+          case 401:
+          case 403:
+            setToastNotification({
+              message: 'Your reset link has expired or is invalid. Please request a new one.',
+              type: 'warning',
+              visible: true,
+            });
+            break;
+          case 404:
+            setToastNotification({
+              message: "We couldn't find an account matching this reset request.",
+              type: 'error',
+              visible: true,
+            });
+            break;
+          case 429:
+            setToastNotification({
+              message: 'Too many password reset attempts. Please try again later.',
+              type: 'warning',
+              visible: true,
+            });
+            break;
+          default:
+            setToastNotification({
+              message: 'An unexpected error occurred. Please try again later.',
+              type: 'error',
+              visible: true,
+            });
+        }
+      } else if (error.request) {
+        setToastNotification({
+          message: 'Unable to reach the server. Please check your connection.',
+          type: 'error',
+          visible: true,
+        });
+      } else {
+        setToastNotification({
+          message: 'An unexpected error occurred. Please try again later.',
+          type: 'error',
+          visible: true,
+        });
+      }
     }
   };
 
@@ -49,6 +112,14 @@ const ResetPassword = () => {
           : 'You can now go to login, and sign in with your new password!'
       }
     >
+      {toastNotification && toastNotification.visible && (
+        <ToastNotification
+          message={toastNotification.message}
+          type={toastNotification.type}
+          onClose={() => setToastNotification(null)}
+          duration={5000}
+        />
+      )}
       {!isPasswordReset && (
         <form onSubmit={handleSubmit(onSubmit)} className='reset-password-form'>
           <div className='form-input-container'>

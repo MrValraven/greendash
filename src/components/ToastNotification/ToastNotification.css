@@ -1,0 +1,153 @@
+.toast-notification {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  min-width: 300px;
+  max-width: 450px;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.3s ease-in-out, fadeIn 0.3s ease-in-out;
+  backdrop-filter: blur(4px);
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.toast-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 12px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.toast-message {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+  color: inherit;
+}
+
+.toast-close:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Success Toast */
+.toast-notification.success {
+  background-color: white;
+  color: rgb(47, 43, 61);
+  border-left: 5px solid #27ae60;
+}
+
+.toast-icon.success {
+  background-color: #27ae60;
+  color: white;
+}
+
+/* Error Toast */
+.toast-notification.error {
+  background-color: white;
+  color: rgb(47, 43, 61);
+  border-left: 5px solid #c0392b;
+}
+
+.toast-icon.error {
+  background-color: #c0392b;
+  color: white;
+}
+
+/* Warning Toast */
+.toast-notification.warning {
+  background-color: white;
+  color: rgb(47, 43, 61);
+  border-left: 5px solid #f39c12;
+}
+
+.toast-icon.warning {
+  background-color: #f39c12;
+  color: white;
+}
+
+/* Info Toast */
+.toast-notification.info {
+  background-color: white;
+  color: rgb(47, 43, 61);
+  border-left: 5px solid #2980b9;
+}
+
+.toast-icon.info {
+  background-color: #2980b9;
+  color: white;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .toast-notification {
+    min-width: auto;
+    width: calc(100% - 40px);
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+}
+
+/* Toast container for stacking multiple toasts */
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* For stacking multiple toasts */
+.toast-container .toast-notification {
+  margin-bottom: 10px;
+  position: static;
+}
