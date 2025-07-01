@@ -12,6 +12,14 @@ export const personalSchema = z.object({
 export const companySchema = z.object({
   companyName: z.string().min(2, 'Company name is required'),
   businessSector: z.string().min(1, 'Business sector is required'),
+  companyLogo: z
+    .instanceof(FileList)
+    .refine((files) => {
+      return Array.from(files).every((file) =>
+        ['image/jpeg', 'image/png', 'image/svg+xml'].includes(file.type),
+      );
+    }, 'Only JPEG, PNG, and SVG files are accepted')
+    .optional(),
   taxId: z.string().min(1, 'Tax ID is required'),
   companySize: z.string().min(1, 'Company size is required'),
   contactNumber: z.string().min(1, 'Contact number is required'),
