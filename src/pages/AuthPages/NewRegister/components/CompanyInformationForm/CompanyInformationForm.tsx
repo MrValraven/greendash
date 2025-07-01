@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { companySchema, type CompanyFormData } from '../../schema.ts';
@@ -7,6 +8,7 @@ import { CompanyInformationFormProps } from './types.ts';
 
 import InputField from '@components/FieldComponents/InputField/InputField.tsx';
 import SelectField from '@components/FieldComponents/SelectField/SelectField.tsx';
+import FileField from '@components/FieldComponents/FileField/FileField.tsx';
 import Label from '@components/FieldComponents/Label/Label.tsx';
 import ErrorMessage from '@components/FieldComponents/ErrorMessage/ErrorMessage.tsx';
 
@@ -18,6 +20,8 @@ const CompanyInformationForm = ({
   activeStep,
   defaultValues = {},
 }: CompanyInformationFormProps) => {
+  const [companyLogoPreview, setCompanyLogoPreview] = useState<string | null>(null);
+
   const {
     register,
     handleSubmit,
@@ -26,6 +30,16 @@ const CompanyInformationForm = ({
     resolver: zodResolver(companySchema),
     defaultValues,
   });
+
+  const handleCompanyLogoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file && file.type.startsWith('image/')) {
+      const imageUrl = URL.createObjectURL(file);
+      setCompanyLogoPreview(imageUrl);
+    } else {
+      setCompanyLogoPreview(null);
+    }
+  };
 
   const handlePrevious = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -86,6 +100,32 @@ const CompanyInformationForm = ({
           </div>
 
           <div className='company-input-group'>
+            <div className='company-logo-container'>
+              <Label htmlFor='companyLogo' label='Company Logo' />
+              <div className='file-input-container-wrapper'>
+                <div className='file-input-container'>
+                  <p>Upload Logo In PNG or JPEG</p>
+                  <FileField
+                    id='companyLogo'
+                    register={register('companyLogo')}
+                    accept='image/*'
+                    placeholder='Upload Company Logo'
+                    onChange={handleCompanyLogoChange}
+                  />
+                </div>
+              </div>
+              <ErrorMessage error={errors.companyLogo?.message} />
+              {companyLogoPreview && (
+                <div className='image-preview'>
+                  <img
+                    src={companyLogoPreview}
+                    alt='Logo preview'
+                    style={{ maxWidth: '100px', marginTop: '1rem' }}
+                  />
+                </div>
+              )}
+            </div>
+
             <div className='form-input-container'>
               <Label htmlFor='taxId' label='Tax ID' />
               <InputField
