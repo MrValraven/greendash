@@ -7,6 +7,7 @@ import StepButtons from '../StepButtons/StepButtons.tsx';
 import ToastNotification from '@components/ToastNotification/ToastNotification.tsx';
 import InputField from '@components/FieldComponents/InputField/InputField.tsx';
 import Label from '@components/FieldComponents/Label/Label.tsx';
+import ErrorMessage from '@components/FieldComponents/ErrorMessage/ErrorMessage.tsx';
 
 import './PersonalInformation.css';
 
@@ -61,19 +62,19 @@ const PersonalInformationForm = ({
                   type='text'
                   register={register('firstName')}
                   placeholder='John'
-                  error={errors.firstName?.message}
                 />
+                <ErrorMessage error={errors.firstName?.message} />
               </div>
 
               <div className='form-input-container'>
                 <Label htmlFor='mobileNumber' label='Mobile' />
                 <InputField
                   id='mobileNumber'
-                  type='text'
+                  type='number'
                   register={register('mobileNumber')}
                   placeholder='205 555 0111'
-                  error={errors.mobileNumber?.message}
                 />
+                <ErrorMessage error={errors.mobileNumber?.message} />
               </div>
 
               <div className='form-input-container'>
@@ -83,8 +84,8 @@ const PersonalInformationForm = ({
                   type='text'
                   register={register('email')}
                   placeholder='Enter your work email'
-                  error={errors.email?.message}
                 />
+                <ErrorMessage error={errors.email?.message} />
               </div>
             </div>
 
@@ -96,8 +97,8 @@ const PersonalInformationForm = ({
                   type='text'
                   register={register('lastName')}
                   placeholder='Doe'
-                  error={errors.lastName?.message}
                 />
+                <ErrorMessage error={errors.lastName?.message} />
               </div>
 
               <div className='form-input-container'>
@@ -107,8 +108,8 @@ const PersonalInformationForm = ({
                   type='text'
                   register={register('positionInCompany')}
                   placeholder='Position in Company'
-                  error={errors.positionInCompany?.message}
                 />
+                <ErrorMessage error={errors.positionInCompany?.message} />
               </div>
 
               <div className='form-input-container'>
@@ -118,8 +119,8 @@ const PersonalInformationForm = ({
                   type='password'
                   register={register('password')}
                   placeholder='Enter your password'
-                  error={errors.password?.message}
                 />
+                <ErrorMessage error={errors.password?.message} />
               </div>
             </div>
           </div>

@@ -69,6 +69,11 @@
   outline: none;
 }
 
+.personal-info-form .form-input-container input[type='number']::-webkit-inner-spin-button,
+.personal-info-form .form-input-container input[type='number']::-webkit-outer-spin-button {
+  appearance: none;
+}
+
 .personal-info-form .form-input-container .error {
   font-size: 12px;
   color: #d9304c;
