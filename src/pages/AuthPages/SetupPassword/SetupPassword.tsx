@@ -1,16 +1,24 @@
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { setupPasswordSchema, type SetupPasswordFormSchema } from './schema.ts';
 import Button from '@components/Button/Button.tsx';
 import AuthLayout from '../components/AuthLayout/AuthLayout.tsx';
+import ToastNotification from '@components/ToastNotification/ToastNotification.tsx';
 
 import InputField from '@components/FieldComponents/InputField/InputField.tsx';
 import Label from '@components/FieldComponents/Label/Label.tsx';
+import ErrorMessage from '@components/FieldComponents/ErrorMessage/ErrorMessage.tsx';
 
 import backArrowIcon from '@assets/chevron-left.svg';
 import './SetupPassword.css';
 
 const SetupPassword = () => {
+  const [toastNotification, setToastNotification] = useState<{
+    message: string;
+    type: 'success' | 'error' | 'info' | 'warning';
+    visible: boolean;
+  } | null>(null);
   const {
     register,
     handleSubmit,
@@ -34,6 +42,14 @@ const SetupPassword = () => {
       title='Set Up Your Password'
       description='Your password must be at least 8 characters long.'
     >
+      {toastNotification && toastNotification.visible && (
+        <ToastNotification
+          message={toastNotification.message}
+          type={toastNotification.type}
+          onClose={() => setToastNotification(null)}
+          duration={5000}
+        />
+      )}
       <form onSubmit={handleSubmit(onSubmit)} className='setup-password-form'>
         <div className='form-input-container'>
           <Label htmlFor='password' label='Password' />
@@ -42,8 +58,8 @@ const SetupPassword = () => {
             type='password'
             register={register('password')}
             placeholder='Enter your password'
-            error={errors.password?.message}
           />
+          <ErrorMessage error={errors.password?.message} />
         </div>
 
         <div className='form-input-container'>
@@ -53,8 +69,8 @@ const SetupPassword = () => {
             type='password'
             register={register('confirmPassword')}
             placeholder='Confirm your password'
-            error={errors.confirmPassword?.message}
           />
+          <ErrorMessage error={errors.confirmPassword?.message} />
         </div>
 
         <Button className='setup-password-button' type='submit'>

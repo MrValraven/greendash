@@ -4,6 +4,7 @@ import { personalSchema, PersonalFormData } from '../../schema.ts';
 import { PersonalInformationFormProps } from './types.ts';
 import RegistrationSteps from '../RegistrationSteps/RegistrationSteps.tsx';
 import StepButtons from '../StepButtons/StepButtons.tsx';
+import ToastNotification from '@components/ToastNotification/ToastNotification.tsx';
 import InputField from '@components/FieldComponents/InputField/InputField.tsx';
 import Label from '@components/FieldComponents/Label/Label.tsx';
 
@@ -13,6 +14,8 @@ const PersonalInformationForm = ({
   onSubmit,
   onPrevious,
   activeStep,
+  toastNotification,
+  closeToastNotification,
 }: PersonalInformationFormProps) => {
   const {
     register,
@@ -38,6 +41,15 @@ const PersonalInformationForm = ({
           <h2>Account Information</h2>
           <p>Enter your account details</p>
         </div>
+
+        {toastNotification && toastNotification.visible && (
+          <ToastNotification
+            message={toastNotification.message}
+            type={toastNotification.type}
+            onClose={closeToastNotification}
+            duration={5000}
+          />
+        )}
 
         <form onSubmit={handleSubmit(onSubmit)} className='personal-info-form'>
           <div className='form-input-groups-container'>

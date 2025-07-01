@@ -6,6 +6,7 @@ import InputField from '@components/FieldComponents/InputField/InputField.tsx';
 import Label from '@components/FieldComponents/Label/Label.tsx';
 import Button from '@components/Button/Button.tsx';
 import AuthLayout from '../components/AuthLayout/AuthLayout.tsx';
+import ToastNotification from '@components/ToastNotification/ToastNotification.tsx';
 
 import backArrowIcon from '@assets/chevron-left.svg';
 import './ForgotPassword.css';
@@ -16,6 +17,12 @@ import baseURL from '../../../api/api.ts';
 const ForgotPassword = () => {
   const [isEmailSent, setIsEmailSent] = useState(false);
   const [userEmail, setUserEmail] = useState('');
+  const [toastNotification, setToastNotification] = useState<{
+    message: string;
+    type: 'success' | 'error' | 'info' | 'warning';
+    visible: boolean;
+  } | null>(null);
+
   const {
     register,
     handleSubmit,
@@ -35,9 +42,51 @@ const ForgotPassword = () => {
         setIsEmailSent(true);
       } else {
         console.error('Failed to send reset link:', response.data);
+        setToastNotification({
+          message: 'Failed to send reset link. Please try again.',
+          type: 'error',
+          visible: true,
+        });
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error sending forgot password request:', error);
+
+      if (error.response) {
+        switch (error.response.status) {
+          case 404:
+            setToastNotification({
+              message: 'Email not found. Please check your email.',
+              type: 'error',
+              visible: true,
+            });
+            break;
+          case 429:
+            setToastNotification({
+              message: 'Too many requests. Please try again later.',
+              type: 'warning',
+              visible: true,
+            });
+            break;
+          default:
+            setToastNotification({
+              message: 'Failed to send reset link. Please try again.',
+              type: 'error',
+              visible: true,
+            });
+        }
+      } else if (error.request) {
+        setToastNotification({
+          message: 'Unable to reach the server. Please check your connection.',
+          type: 'error',
+          visible: true,
+        });
+      } else {
+        setToastNotification({
+          message: 'An unexpected error occurred. Please try again later.',
+          type: 'error',
+          visible: true,
+        });
+      }
     }
   };
 
@@ -52,10 +101,56 @@ const ForgotPassword = () => {
         console.log('Reset link resent successfully');
       } else {
         console.error('Failed to resend reset link:', response.data);
+        setToastNotification({
+          message: 'Failed to resend reset link. Please try again.',
+          type: 'error',
+          visible: true,
+        });
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error resending reset link:', error);
+
+      if (error.response) {
+        switch (error.response.status) {
+          case 404:
+            setToastNotification({
+              message: 'Email not found. Please check your email.',
+              type: 'error',
+              visible: true,
+            });
+            break;
+          case 429:
+            setToastNotification({
+              message: 'Too many requests. Please try again later.',
+              type: 'error',
+              visible: true,
+            });
+            break;
+          default:
+            setToastNotification({
+              message: 'Failed to resend reset link. Please try again.',
+              type: 'error',
+              visible: true,
+            });
+        }
+      } else if (error.request) {
+        setToastNotification({
+          message: 'Unable to reach the server. Please check your connection.',
+          type: 'error',
+          visible: true,
+        });
+      } else {
+        setToastNotification({
+          message: `An unexpected error occurred. Please try again.`,
+          type: 'error',
+          visible: true,
+        });
+      }
     }
+  };
+
+  const closeToastNotification = () => {
+    setToastNotification(null);
   };
 
   return (
@@ -67,6 +162,15 @@ const ForgotPassword = () => {
           : ''
       }
     >
+      {toastNotification && toastNotification.visible && (
+        <ToastNotification
+          message={toastNotification.message}
+          type={toastNotification.type}
+          onClose={closeToastNotification}
+          duration={5000}
+        />
+      )}
+
       {!isEmailSent && (
         <form onSubmit={handleSubmit(onSubmit)} className='forgot-password-form'>
           <div className='form-input-container'>

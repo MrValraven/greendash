@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { loginSchema, type LoginFormSchema } from './schema.ts';
 import Button from '@components/Button/Button.tsx';
 import InputField from '@components/FieldComponents/InputField/InputField.tsx';
+import ErrorMessage from '@components/FieldComponents/ErrorMessage/ErrorMessage.tsx';
 import Label from '@components/FieldComponents/Label/Label.tsx';
 import AuthLayout from '../components/AuthLayout/AuthLayout.tsx';
+import ToastNotification from '@components/ToastNotification/ToastNotification.tsx';
 
 import './Login.css';
 
@@ -12,6 +15,12 @@ import axios from 'axios';
 import baseURL from '../../../api/api.ts';
 
 const Login = () => {
+  const [toastNotification, setToastNotification] = useState<{
+    message: string;
+    type: 'success' | 'error' | 'info' | 'warning';
+    visible: boolean;
+  } | null>(null);
+
   const {
     register,
     handleSubmit,
@@ -29,10 +38,64 @@ const Login = () => {
         window.location.href = '/report/';
       } else {
         console.error('Login failed:', response.data);
+        setToastNotification({
+          message: 'Login failed. Please check your credentials.',
+          type: 'error',
+          visible: true,
+        });
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Login error:', error);
+
+      if (error.response) {
+        switch (error.response.status) {
+          case 401:
+            setToastNotification({
+              message: 'Invalid email or password. Please try again.',
+              type: 'warning',
+              visible: true,
+            });
+            break;
+          case 403:
+            setToastNotification({
+              message: 'Your account is inactive. Please contact support.',
+              type: 'error',
+              visible: true,
+            });
+            break;
+          case 429:
+            setToastNotification({
+              message: 'Too many login attempts. Please try again later.',
+              type: 'warning',
+              visible: true,
+            });
+            break;
+          default:
+            setToastNotification({
+              message: 'Login failed. Please try again later.',
+              type: 'error',
+              visible: true,
+            });
+            break;
+        }
+      } else if (error.request) {
+        setToastNotification({
+          message: 'Unable to reach the server. Please check your connection.',
+          type: 'error',
+          visible: true,
+        });
+      } else {
+        setToastNotification({
+          message: `An unexpected error occurred. Please try again later.`,
+          type: 'error',
+          visible: true,
+        });
+      }
     }
+  };
+
+  const closeToastNotification = () => {
+    setToastNotification(null);
   };
 
   return (
@@ -40,6 +103,15 @@ const Login = () => {
       title='Welcome to GreenDash!'
       description='Please sign-in to your account and start the adventure'
     >
+      {toastNotification && toastNotification.visible && (
+        <ToastNotification
+          message={toastNotification.message}
+          type={toastNotification.type}
+          onClose={closeToastNotification}
+          duration={5000}
+        />
+      )}
+
       <form onSubmit={handleSubmit(onSubmit)} className='login-form'>
         <div className='form-input-container'>
           <Label htmlFor='email' label='Email' />
@@ -48,8 +120,8 @@ const Login = () => {
             type='text'
             register={register('email')}
             placeholder='Enter your email'
-            error={errors.email?.message}
           />
+          <ErrorMessage error={errors.email?.message} />
         </div>
 
         <div className='form-input-container'>
@@ -61,6 +133,7 @@ const Login = () => {
             placeholder='Enter your password'
             error={errors.password?.message}
           />
+          <ErrorMessage error={errors.password?.message} />
         </div>
 
         <div className='login-form-options'>
@@ -76,7 +149,7 @@ const Login = () => {
         </div>
 
         <Button className='login-button' type='submit' disabled={isSubmitting}>
-          {isSubmitting ? 'Logging in...' : 'Login'}
+          Login
         </Button>
       </form>
     </AuthLayout>

@@ -18,6 +18,11 @@ import './Register.css';
 const Register = () => {
   const [activeStep, setActiveStep] = useState(1);
   const [registrationData, setRegistrationData] = useState<RegistrationData>({});
+  const [toastNotification, setToastNotification] = useState<{
+    message: string;
+    type: 'success' | 'error' | 'info' | 'warning';
+    visible: boolean;
+  } | null>(null);
 
   const handleCompanySubmit: SubmitHandler<Partial<CompanyFormData>> = async (data) => {
     try {
@@ -44,11 +49,64 @@ const Register = () => {
         password: finalData.password,
       };
 
-      await axios.post(`${baseURL}/auth/users/register`, dataToSend);
+      const response = await axios.post(`${baseURL}/auth/users/register`, dataToSend);
 
-      setActiveStep(3);
-    } catch (error) {
+      if (response.status === 201) {
+        setActiveStep(3);
+      } else {
+        console.error('Registration failed:', response.data);
+        setToastNotification({
+          message: 'Registration failed. Please try again.',
+          type: 'error',
+          visible: true,
+        });
+      }
+    } catch (error: any) {
       console.error('Registration error:', error);
+
+      if (error.response) {
+        switch (error.response.status) {
+          case 400:
+            setToastNotification({
+              message: 'Invalid registration details. Please check your information.',
+              type: 'warning',
+              visible: true,
+            });
+            break;
+          case 409:
+            setToastNotification({
+              message: 'Email already exists. Please use a different email.',
+              type: 'warning',
+              visible: true,
+            });
+            break;
+          case 429:
+            setToastNotification({
+              message: 'Too many registration attempts. Please try again later.',
+              type: 'warning',
+              visible: true,
+            });
+            break;
+          default:
+            setToastNotification({
+              message: 'Registration failed. Please try again later.',
+              type: 'error',
+              visible: true,
+            });
+        }
+      } else if (error.request) {
+        setToastNotification({
+          message: 'Unable to reach the server. Please check your connection.',
+          type: 'error',
+          visible: true,
+        });
+      } else {
+        setToastNotification({
+          message: 'An unexpected error occurred. Please try again later.',
+          type: 'error',
+          visible: true,
+        });
+      }
     }
   };
 
@@ -56,6 +114,10 @@ const Register = () => {
     if (activeStep > 1) {
       setActiveStep(activeStep - 1);
     }
+  };
+
+  const closeToastNotification = () => {
+    setToastNotification(null);
   };
 
   if (activeStep === 3) {
@@ -88,6 +150,8 @@ const Register = () => {
             onSubmit={handlePersonalSubmit}
             onPrevious={handlePreviousStep}
             activeStep={activeStep}
+            toastNotification={toastNotification}
+            closeToastNotification={closeToastNotification}
           />
         )}
       </div>
