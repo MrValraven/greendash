@@ -1,6 +1,6 @@
 .toast-notification {
   position: fixed;
-  bottom: 40px;
+  top: 40px;
   right: 20px;
   min-width: 300px;
   max-width: 450px;
