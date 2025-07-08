@@ -1,6 +1,7 @@
 import React from 'react';
 import arrowDropdownIcon from './icons/sidebar-arrow-drop-icon.svg';
 import { SidebarItemType } from '../../types.ts';
+import Tooltip from '@components/Tooltip/Tooltip.tsx';
 
 import './SidebarItem.css';
 
@@ -48,6 +49,17 @@ const SidebarItem: React.FC<Props> = ({
     }
   };
 
+  const renderIcon = () => {
+    if (collapsed) {
+      return (
+        <Tooltip content={item.label} position='right' delay={600}>
+          <img src={item.icon} alt={item.label} className='sidebar-icon' />
+        </Tooltip>
+      );
+    }
+    return <img src={item.icon} alt={item.label} className='sidebar-icon' />;
+  };
+
   return (
     <>
       <div
@@ -56,7 +68,7 @@ const SidebarItem: React.FC<Props> = ({
         }`}
         onClick={handleItemClick}
       >
-        <img src={item.icon} alt={item.label} className='sidebar-icon' />
+        {renderIcon()}
         {!collapsed && (
           <>
             <div className='sidebar-label'>{item.label}</div>
