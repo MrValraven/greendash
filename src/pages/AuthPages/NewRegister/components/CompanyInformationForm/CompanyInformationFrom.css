@@ -60,10 +60,6 @@
   font-size: 14px;
 }
 
-.company-info-form .form-input-container input::placeholder {
-  color: rgba(47, 43, 61, 0.4);
-}
-
 .company-info-form .form-input-container input:focus,
 .company-info-form .form-input-container select:focus {
   border-color: #399c17;
@@ -96,4 +92,49 @@
 .company-info-form .form-input-container .error {
   font-size: 12px;
   color: #d9304c;
+}
+
+/* custom file input styles */
+
+.company-logo-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.company-logo-container label {
+  font-size: 12px;
+  color: rgba(47, 43, 61, 0.9);
+}
+
+.file-input-container-wrapper {
+  width: 100%;
+  height: 100%;
+  padding-top: 7px;
+}
+
+.file-input-container {
+  position: relative;
+  width: 214px;
+  height: 26px;
+  background-color: rgba(128, 131, 144, 0.078);
+  border-radius: 6px;
+  box-shadow: 1px 1px 4px rgba(115, 103, 240, 0.302);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.company-info-form .company-logo-container .file-input-container input[type='file'] {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.file-input-container p {
+  color: rgb(128, 131, 144);
+  font-size: 12px;
+  font-weight: 500;
 }
