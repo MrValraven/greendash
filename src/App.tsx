@@ -15,6 +15,7 @@ import ReportBuilder from '@pages/Report/ReportBuilder/ReportBuilder';
 import ReportDownload from '@pages/Report/ReportDownload/ReportDownload';
 
 import './styles/global.css';
+import UserMenu from '@pages/UserMenu/UserMenu';
 
 const App: React.FC = () => {
   return (
@@ -44,6 +45,7 @@ const App: React.FC = () => {
         </Route>
 
         <Route element={<ReportLayout />}>
+          <Route path='/menu' element={<UserMenu />} />
           <Route path='/report' element={<Report />} />
           <Route path='/report/builder' element={<ReportBuilder />} />
           <Route path='/report/download' element={<ReportDownload />} />

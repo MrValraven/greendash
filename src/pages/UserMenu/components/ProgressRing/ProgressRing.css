@@ -1,0 +1,76 @@
+.progress-ring {
+  width: 50%;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: system-ui, sans-serif;
+}
+
+#chart {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-ring h3 {
+  text-align: left;
+}
+
+.progress-ring__svg {
+  transform: rotate(-90deg); /* start at 12 o’clock */
+}
+
+.progress-ring__circle--bg,
+.progress-ring__circle--fg {
+  fill: none;
+  stroke-width: 8;
+  r: 36;
+  cx: 60;
+  cy: 60;
+  stroke-linecap: round;
+}
+
+.progress-ring__circle--bg {
+  stroke: #e5e5e5;
+}
+
+.progress-ring__circle--fg {
+  stroke: #22c55e;
+  stroke-dasharray: 226;
+  stroke-dashoffset: 226; /* animated via inline style */
+  transition: stroke-dashoffset 0.4s ease;
+}
+
+.progress-ring__label {
+  font-size: 1.25rem;
+  fill: #4b5563; /* gray‑600 */
+  transform: rotate(90deg); /* counter‑rotate text */
+}
+
+.progress-ring__legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.825rem;
+  color: #6b7280; /* gray‑500 */
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 0.35rem;
+}
+.dot--ongoing {
+  background: #22c55e;
+} /* green‑500 */
+.dot--not-started {
+  background: #d1d5db;
+} /* gray‑300 */
