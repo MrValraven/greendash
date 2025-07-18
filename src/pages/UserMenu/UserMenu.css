@@ -1,0 +1,43 @@
+.user-menu .subtitle {
+  color: #4a9b2f;
+  font-size: 14px;
+  padding: 10px 0px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.dashboard-header {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.dataCollectionContainer h3 {
+  font-size: 16px;
+  color: #60636d;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.dataCollectionItemHeader {
+  display: flex;
+  align-items: center;
+}
+
+.dataCollectionIcon {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .dashboard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard > section:last-child {
+    grid-column: 1 / -1; /* full‑width list */
+  }
+}

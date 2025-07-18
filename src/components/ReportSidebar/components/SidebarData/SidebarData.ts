@@ -32,7 +32,7 @@ const sidebarItems: SidebarSection[] = [
     items: [
       {
         icon: databaseIcon,
-        label: 'Database',
+        label: 'Data Collection',
         path: '/report-hub/database/',
         items: [
           { icon: generalIcon, label: 'General', path: '/report-hub/database/general/' },

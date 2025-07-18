@@ -1,0 +1,50 @@
+.disclosure-row {
+  display: grid;
+  grid-template-columns: 1fr auto 160px auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #e5e7eb; /* gray‑200 */
+}
+
+.disclosure-row__title {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #374151; /* gray‑700 */
+}
+
+.disclosure-row__owner {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 600;
+}
+
+.disclosure-row__owner img {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.disclosure-row__bar {
+  height: 6px;
+  border-radius: 4px;
+  background: #e5e5e5;
+  position: relative;
+}
+
+.disclosure-row__bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: var(--progress);
+  background: #22c55e;
+  border-radius: inherit;
+  transition: width 0.3s ease;
+}
+
+.disclosure-row__percent {
+  font-size: 0.8rem;
+  color: #4b5563; /* gray‑600 */
+}
